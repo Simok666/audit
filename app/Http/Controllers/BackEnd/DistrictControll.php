@@ -22,7 +22,7 @@ class DistrictControll extends Controller
     	$this->UploadFile = new UploadFileControll();
         $this->History = new HistoryControll();
         $this->AppWeb = new AppWebControll();
-        $this->DBMain = DB::connection('maindb_widatra');
+        $this->DBMain = DB::connection('wdb_auditsys');
     }
 
     public function index(Request $request) {

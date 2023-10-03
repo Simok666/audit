@@ -30,7 +30,7 @@ class AppWebControll extends Controller
 
     public function checkDataOneColMaster($table, $column, $value) {
     	if($table!='' && $column!='' && $value!=''){
-	    	$data =DB::connection('maindb_widatra')->table($table)
+	    	$data =DB::connection('wdb_auditsys')->table($table)
 	            ->where($column, $value)
 	            ->where('Actived','>',0)
 	            ->count();
@@ -56,7 +56,7 @@ class AppWebControll extends Controller
 
     public function checkDataManyColMaster($table, $columns=array()) {
     	if( $table!='' && !empty($columns) ) {
-	    	$query = DB::connection('maindb_widatra')->table($table)->where('Actived','>',0);
+	    	$query = DB::connection('wdb_auditsys')->table($table)->where('Actived','>',0);
 	    	$query->where(function($query) use ($columns) {
                 foreach ($columns as $key=>$val) {
                     $query->where($key, $val);

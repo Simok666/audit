@@ -21,7 +21,7 @@ class PlanCapaReportControll extends Controller
 
     public function __construct() {
         $this->History = new HistoryControll();
-//        $this->DBMain = DB::connection('maindb_widatra');
+//        $this->DBMain = DB::connection('wdb_auditsys');
         $this->UploadFile = new UploadFileControll();
     }
 
