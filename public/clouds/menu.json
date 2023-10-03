@@ -1,0 +1,389 @@
+[
+
+{
+  "id":2,
+  "text":"Master Data",
+  "value":"/RoleAdmin/master",
+  "icon":"ion ion-logo-buffer",
+  "children":[{
+    "id":3,
+    "text":"Hak Akses User",
+    "value":"/RoleAdmin/master/data-user-access",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":10,
+    "text":"Division",
+    "value":"/RoleAdmin/master/data-division",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":11,
+    "text":"Department",
+    "value":"/RoleAdmin/master/data-department",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":12,
+    "text":"Position",
+    "value":"/RoleAdmin/master/data-position",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":13,
+    "text":"User Karyawan",
+    "value":"/RoleAdmin/master/data-user-employee",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":17,
+    "text":"Struktur Auditor",
+    "value":"/RoleAdmin/master/data-structure-auditor",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":18,
+    "text":"Organizer Auditor",
+    "value":"/RoleAdmin/master/data-organizer-auditor",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":19,
+    "text":"Standart Audit",
+    "value":"/RoleAdmin/master/data-standart-audit",
+    "submenu": [{
+      "type":"formclause",
+      "text":"Create & Edit Clause",
+      "value":"/RoleAdmin/master/form-audit-clause"
+    },{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/master/view-attachment-standart-audit"
+    },{
+      "type":"deleteclause",
+      "text":"Delete Clause",
+      "value":"/AdminVue/standart-audit-clause-delete"
+    },{
+      "type":"showclause",
+      "text":"Show Clause",
+      "value":"/RoleAdmin/master/show-audit-clause"
+    },{
+      "type":"importclause",
+      "text":"Import Clause",
+      "value":"/RoleAdmin/master/form-audit-clause-import"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":20,
+    "text":"Personel Auditor",
+    "value":"/RoleAdmin/master/data-personel-auditor",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":21,
+    "text":"Auditor Skill",
+    "value":"/RoleAdmin/master/data-auditor-skill",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/master/view-attachment-auditor-skill"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":22,
+    "text":"Template Email",
+    "value":"/RoleAdmin/master/data-email-template",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":23,
+    "text":"Daftar Istilah",
+    "value":"/RoleAdmin/master/data-glossary-of-terms",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  }]
+
+},{
+  "id":24,
+  "text":"Audit",
+  "value":"/RoleAdmin/audit",
+  "icon":"ion ion-md-mail-unread",
+  "children":[{
+    "id":25,
+    "text":"Audit Plan",
+    "value":"/RoleAdmin/audit/data-audit-plan",
+    "submenu": [{
+      "type":"showauditee",
+      "text":"Show Auditee Plan",
+      "value":"/RoleAdmin/audit/show-auditee-audit-plan"
+    },{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/audit/view-attachment-audit-plan"
+    },{
+      "type":"approve",
+      "text":"Approve Audit Plan",
+      "value":"/RoleAdmin/audit/approve-audit-plan"
+    },{
+      "type":"export",
+      "text":"Export Program",
+      "value":"export.audit-program"
+    },{
+      "type":"export",
+      "text":"Export Jadwal",
+      "value":"export.audit-jadwal"
+    },{
+      "type":"export",
+      "text":"Export Tindak Lanjut",
+      "value":"export.audit-tindak-lanjut"
+    },{
+      "type":"export",
+      "text":"Export Analisis",
+      "value":"export.audit-analisis"
+    },{
+      "type":"export",
+      "text":"Export Excell",
+      "value":"export.audit-excel"
+    },{
+      "type":"publish",
+      "text":"Publish Audit Plan",
+      "value":"/AdminVue/audit-plan-publish"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":26,
+    "text":"Auditor Team",
+    "value":"/RoleAdmin/audit/data-auditor-team",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/audit/view-attachment-auditor-team"
+    },{
+      "type":"approve",
+      "text":"Approve Auditor Team",
+      "value":"/RoleAdmin/audit/approve-auditor-team"
+    },{
+      "type":"export",
+      "text":"Export Daftar Hadir",
+      "value":"export.audit-daftar-hadir"
+    },{
+      "type":"publish",
+      "text":"Publish Auditor Team",
+      "value":"/AdminVue/auditor-team-publish"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":28,
+    "text":"Audit Report",
+    "value":"/RoleAdmin/audit/data-auditor-report",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/audit/view-attachment-auditor-report"
+    },{
+      "type":"export",
+      "text":"Export Status Audit",
+      "value":"export.audit-status-audit"
+    },{
+      "type":"publish",
+      "text":"Publish Audit Report",
+      "value":"/AdminVue/auditor-report-publish"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":29,
+    "text":"Plan Capa",
+    "value":"/RoleAdmin/audit/data-plan-capa-report",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/audit/view-attachment-plan-capa-report"
+    },{
+      "type":"publish",
+      "text":"Publish Plan Capa",
+      "value":"/AdminVue/plan-capa-report-publish"
+    },{
+      "type":"remainder",
+      "text":"Send Reminder Plan Capa",
+      "value":"/AdminVue/plan-capa-report-sendEmail"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":30,
+    "text":"Verification Capa",
+    "value":"/RoleAdmin/audit/data-verification-capa-report",
+    "submenu":[{
+      "type":"export",
+      "text":"Export Hasil Audit",
+      "value":"export.audit-hasil-audit"
+    },{
+      "type":"publish",
+      "text":"Publish Verification Capa Report",
+      "value":"/AdminVue/verification-capa-report-publish"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  }]
+},{
+  "id":31,
+  "text":"Persetujuan",
+  "value":"/RoleAdmin/approval",
+  "icon": "ion ion-md-checkmark",
+  "children":[{
+    "id":32,
+    "text":"Audit Plan",
+    "value":"/RoleAdmin/approval/data-approval-audit-plan",
+    "submenu": [{
+      "type":"showauditee",
+      "text":"Show Auditee Plan",
+      "value":"/RoleAdmin/approval/show-auditee-approval-audit-plan"
+    },{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/approval/view-attachment-approval-audit-plan"
+    },{
+      "type":"approve",
+      "text":"Approve Audit Plan",
+      "value":"/AdminVue/approval-audit-plan-approveData"
+    },{
+      "type":"reject",
+      "text":"Reject Audit Plan",
+      "value":"/AdminVue/approval-audit-plan-rejectData"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":33,
+    "text":"Auditor Team",
+    "value":"/RoleAdmin/approval/data-approval-auditor-team",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/approval/view-attachment-approval-auditor-team"
+    },{
+      "type":"approve",
+      "text":"Approve Auditor Team",
+      "value":"/AdminVue/approval-auditor-team-approveData"
+    },{
+      "type":"reject",
+      "text":"Reject Auditor Team",
+      "value":"/AdminVue/approval-auditor-team-rejectData"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":34,
+    "text":"Audit Report",
+    "value":"/RoleAdmin/approval/data-approval-auditor-report",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/approval/view-attachment-approval-auditor-report"
+    },{
+      "type":"approve",
+      "text":"Approve Audit Report",
+      "value":"/AdminVue/approval-auditor-report-approveData"
+    },{
+      "type":"reject",
+      "text":"Reject Audit Report",
+      "value":"/AdminVue/approval-auditor-report-rejectData"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":35,
+    "text":"Plan Capa",
+    "value":"/RoleAdmin/approval/data-approval-plan-capa-report",
+    "submenu": [{
+      "type":"view",
+      "text":"View Attachment",
+      "value":"/RoleAdmin/approval/view-attachment-approval-plan-capa-report"
+    },{
+      "type":"approve",
+      "text":"Approve Plan Capa",
+      "value":"/AdminVue/approval-plan-capa-report-approveData"
+    },{
+      "type":"reject",
+      "text":"Reject Plan Capa",
+      "value":"/AdminVue/approval-plan-capa-report-rejectData"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  },{
+    "id":36,
+    "text":"Verification Capa",
+    "value":"/RoleAdmin/approval/data-approval-verification-capa-report",
+    "submenu":[{
+      "type":"approve",
+      "text":"Approve Verification Capa",
+      "value":"/AdminVue/approval-verification-capa-report-approveData"
+    },{
+      "type":"reject",
+      "text":"Reject Verification Capa",
+      "value":"/AdminVue/approval-verification-capa-report-rejectData"
+    }],
+    "icon":"ion ion-md-bookmark",
+    "children":[]
+  }]
+},{
+    "id":37,
+    "text":"Manual Book",
+    "value":"/RoleAdmin/main/manual-book",
+    "icon":"ion ion-md-book",
+    "submenu":[{
+      "type":"show",
+      "text":"Show",
+      "value":"/RoleAdmin/main/show-manual-book"
+    },{
+      "type":"form",
+      "text":"Create & Edit",
+      "value":"/RoleAdmin/main/form-manual-book"
+    },{
+      "type":"delete",
+      "text":"Delete",
+      "value":"/AdminVue/manual-book-delete"
+    }],
+    "children":[]
+
+  },{
+  "id":14,
+  "text":"Master Module",
+  "value":"/RoleAdmin/main/master-module",
+  "submenu": [{
+    "type":"show",
+    "text":"Show",
+    "value":"/RoleAdmin/main/show-master-module"
+  },{
+    "type":"form",
+    "text":"Create & Edit",
+    "value":"/RoleAdmin/main/form-master-module"
+  },{
+    "type":"delete",
+    "text":"Delete",
+    "value":"/AdminVue/master-module-delete"
+  }],
+  "icon":"ion ion-md-filing",
+  "children":[]
+
+},
+{
+  "id":15,
+  "text":"History Data",
+  "value":"/RoleAdmin/main/history-data",
+  "submenu": [{
+    "type":"show",
+    "text":"Show",
+    "value":"/RoleAdmin/main/show-history-data"
+  }],
+  "icon":"ion ion-md-time",
+  "children":[]
+
+}
+
+]

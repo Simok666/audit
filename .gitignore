@@ -1,0 +1,72 @@
+# Laravel
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+/nbproject
+Homestead.json
+Homestead.yaml
+.phpunit.result.cache
+.env.backup
+docker-compose.override.yml
+
+# Vagrant
+/.vagrant
+
+# Dependencies
+/node_modules
+
+# IDEs and editors
+.idea
+.vscode
+.vs
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+!logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+.npm
+.eslintcache
+.yarn-integrity
+
+# System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Windows shortcuts
+*.lnk
+
+/public/vendor
+# /public/*.js
+/public/*.js.LICENSE.txt
+/public/mix-manifest.json
+# package-lock.json
+# composer.lock
