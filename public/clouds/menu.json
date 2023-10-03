@@ -112,7 +112,7 @@
   "icon":"ion ion-md-mail-unread",
   "children":[{
     "id":25,
-    "text":"Audit Plan",
+    "text":"Program Audit",
     "value":"/RoleAdmin/audit/data-audit-plan",
     "submenu": [{
       "type":"showauditee",
@@ -155,7 +155,7 @@
     "children":[]
   },{
     "id":26,
-    "text":"Auditor Team",
+    "text":"Jadwal Audit",
     "value":"/RoleAdmin/audit/data-auditor-team",
     "submenu": [{
       "type":"view",
@@ -178,7 +178,7 @@
     "children":[]
   },{
     "id":28,
-    "text":"Audit Report",
+    "text":"Laporan Hasil Audit",
     "value":"/RoleAdmin/audit/data-auditor-report",
     "submenu": [{
       "type":"view",
@@ -197,7 +197,7 @@
     "children":[]
   },{
     "id":29,
-    "text":"Plan Capa",
+    "text":"Rencana Tindakan Perbaikan",
     "value":"/RoleAdmin/audit/data-plan-capa-report",
     "submenu": [{
       "type":"view",
@@ -216,7 +216,7 @@
     "children":[]
   },{
     "id":30,
-    "text":"Verification Capa",
+    "text":"Realisasi Tindakan Perbaikan",
     "value":"/RoleAdmin/audit/data-verification-capa-report",
     "submenu":[{
       "type":"export",
@@ -237,7 +237,7 @@
   "icon": "ion ion-md-checkmark",
   "children":[{
     "id":32,
-    "text":"Audit Plan",
+    "text":"Program Audit",
     "value":"/RoleAdmin/approval/data-approval-audit-plan",
     "submenu": [{
       "type":"showauditee",
@@ -260,7 +260,7 @@
     "children":[]
   },{
     "id":33,
-    "text":"Auditor Team",
+    "text":"Jadwal Audit",
     "value":"/RoleAdmin/approval/data-approval-auditor-team",
     "submenu": [{
       "type":"view",
@@ -279,7 +279,7 @@
     "children":[]
   },{
     "id":34,
-    "text":"Audit Report",
+    "text":"Laporan Hasil Audit",
     "value":"/RoleAdmin/approval/data-approval-auditor-report",
     "submenu": [{
       "type":"view",
@@ -298,7 +298,7 @@
     "children":[]
   },{
     "id":35,
-    "text":"Plan Capa",
+    "text":"Rencana Tindakan Perbaikan",
     "value":"/RoleAdmin/approval/data-approval-plan-capa-report",
     "submenu": [{
       "type":"view",
@@ -317,7 +317,7 @@
     "children":[]
   },{
     "id":36,
-    "text":"Verification Capa",
+    "text":"Realisasi Tindakan Perbaikan",
     "value":"/RoleAdmin/approval/data-approval-verification-capa-report",
     "submenu":[{
       "type":"approve",

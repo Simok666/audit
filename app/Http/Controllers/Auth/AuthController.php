@@ -22,7 +22,7 @@ class AuthController extends Controller
 
     public function __construct(){
         $this->History = new HistoryControll();
-        $this->DBMain = DB::connection('maindb_widatra');
+        $this->DBMain = DB::connection('wdb_auditsys');
         $this->middleware('guest:adminvue', ['except' => ['logout', 'getLogout']]);
     }
 
@@ -86,7 +86,7 @@ class AuthController extends Controller
                 ->where('usrd.Apps','Audit')
                 ->where('usr.Id',$item->Id)
                 ->first();
-//                dd($dataUser);
+
                 if(empty($dataUser)){
                     return response()->json(['status'=>422,'dataUser'=>null,'message'=>'Data User Name Or Password Invalid!'], 422);
                 }

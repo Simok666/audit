@@ -18,7 +18,7 @@ class PersonelAuditorControll extends Controller
 
     public function __construct() {
         $this->History = new HistoryControll();
-//        $this->DBMain = DB::connection('maindb_widatra');
+//        $this->DBMain = DB::connection('wdb_auditsys');
     }
 
     public function index(Request $request) {
@@ -39,9 +39,9 @@ class PersonelAuditorControll extends Controller
                 'psa.Department',
                 'psa.Position'
             )
-            // ->join('maindb_widatra.employee as emp','emp.Id','=','psa.IdEmploye')
-            // ->join('maindb_widatra.department as dpt','dpt.Id','=','psa.IdDepartment')
-            // ->join('maindb_widatra.position as pst','pst.Id','=','psa.IdPosition')
+            // ->join('wdb_auditsys.employee as emp','emp.Id','=','psa.IdEmploye')
+            // ->join('wdb_auditsys.department as dpt','dpt.Id','=','psa.IdDepartment')
+            // ->join('wdb_auditsys.position as pst','pst.Id','=','psa.IdPosition')
             ->orderBy($field, $dir)
             ->where('psa.Actived','>',0);
 

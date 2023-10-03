@@ -22,7 +22,7 @@ class CityControll extends Controller
     	$this->UploadFile = new UploadFileControll();
         $this->AppWeb = new AppWebControll();
         $this->History = new HistoryControll();
-        $this->DBMain = DB::connection('maindb_widatra');
+        $this->DBMain = DB::connection('wdb_auditsys');
     }
 
     public function index(Request $request) {

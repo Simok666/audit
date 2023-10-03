@@ -20,7 +20,7 @@ class AuditorTeamControll extends Controller
 
     public function __construct() {
         $this->History = new HistoryControll();
-//        $this->DBMain = DB::connection('maindb_widatra');
+//        $this->DBMain = DB::connection('wdb_auditsys');
         $this->UploadFile = new UploadFileControll();
     }
 
@@ -203,7 +203,7 @@ class AuditorTeamControll extends Controller
     public function getAuditee(Request $request){
         // $Auditee = DB::table('personnel_auditor as pad')
         //     ->select('pad.IdEmployee as Id','emp.Name as Employee')
-        //     ->join('maindb_widatra.employee as emp','emp.Id','=','pad.IdEmploye')
+        //     ->join('wdb_auditsys.employee as emp','emp.Id','=','pad.IdEmploye')
         //     ->where('pad.IdDepartment',$request->input('IdAuditeeDepartment'))
         //     ->where('pad.Actived','>',0)
         //     ->where('pad.Status',1)
