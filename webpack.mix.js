@@ -93,7 +93,7 @@ mix.override(config => {
                     if(loaders.includes(undefined) == true){
                         loaders = [];
                         // inject sass-loader sesuai folder audit di server
-                        loaders = loaders.concat(item.use.find(loader => loader.loader === '/var/www/audit/node_modules/sass-loader/dist/cjs.js'))
+                        loaders = loaders.concat(item.use.find(loader => loader.loader === '/var/www/html/audit/node_modules/sass-loader/dist/cjs.js'))
                     }
                 })
             }
