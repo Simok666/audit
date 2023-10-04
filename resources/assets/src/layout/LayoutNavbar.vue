@@ -150,7 +150,7 @@ export default {
         this.UserPhoto = dataUser.Photo
         this.UserName = dataUser.EmpName
         this.glossary = dataUser.glossary
-        this.notificationsArr = dataUser.notification
+        dataUser.notification !== undefined ? this.notificationsArr = dataUser.notification : this.notificationsArr = []
       }else {
         this.UserPhoto = 'clouds/backend/files/images/users/user-default.png'
         this.UserName = 'User Default'

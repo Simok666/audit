@@ -1,9 +1,9 @@
 (self["webpackChunkaudit_widatra"] = self["webpackChunkaudit_widatra"] || []).push([["resources_assets_src_components_backend_audit_verification-capa-report_form_vue"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,318 +12,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_text_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-text-mask */ "./node_modules/vue-text-mask/dist/vueTextMask.js");
 /* harmony import */ var vue_text_mask__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_text_mask__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -425,11 +113,9 @@ __webpack_require__.r(__webpack_exports__);
       formData.append("HeadAuditee", this.field.HeadAuditee);
       formData.append("HeadAuditeePosition", this.field.HeadAuditeePosition);
       formData.append("IdLeadAuditor", this.field.IdLeadAuditor);
-
       if (this.isAuditee == false) {
         formData.append("IdVerificationExecution", this.field.VerificationExecution.Id);
         formData.append("Status", this.field.Status);
-
         if (this.field.ReAudit != '') {
           formData.append("ReAudit", this.field.ReAudit.value);
           formData.append("ReAuditDate", moment__WEBPACK_IMPORTED_MODULE_0___default()(this.field.ReAuditDate).format('MM/DD/YYYY'));
@@ -437,22 +123,17 @@ __webpack_require__.r(__webpack_exports__);
           formData.append("ReAudit", 2);
           formData.append("ReAuditDate", this.field.ReAuditDate);
         }
-
         formData.append("RecommendationExecution", this.field.RecommendationExecution);
       }
-
       for (var i = 0; i < this.field.FileCorrective.length; i++) {
         var file = this.field.FileCorrective[i];
         formData.append('FileAttachmentCorrective[' + i + ']', file);
       }
-
       formData.append("OldFileAttachmentCorrective", JSON.stringify(this.oldFileAttachmentCorrective));
-
       for (var i = 0; i < this.field.FilePreventive.length; i++) {
         var _file = this.field.FilePreventive[i];
         formData.append('FileAttachmentPreventive[' + i + ']', _file);
       }
-
       formData.append("OldFileAttachmentPreventive", JSON.stringify(this.oldFileAttachmentPreventive));
       var config = {
         headers: {
@@ -461,7 +142,6 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post(this.urlSubmit, formData, config).then(function (res) {
         var resp = res.data;
-
         if (resp.status) {
           this.$router.push({
             name: 'audit/data-verification-capa-report',
@@ -492,7 +172,6 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         var resp = res.data;
         this.field = resp.data;
-
         if (RevisiEdit == true) {
           if (this.field.IdVerificationExecution == 1) {
             this.isDisabled = true;
@@ -502,7 +181,6 @@ __webpack_require__.r(__webpack_exports__);
             this.isDisabled = false;
             this.isReadonly = false;
             this.isRequired = true;
-
             if (this.field.ReAudit.value == 1) {
               this.isDisabledAudit = false;
             } else {
@@ -510,32 +188,26 @@ __webpack_require__.r(__webpack_exports__);
             }
           }
         }
-
-        this.field.FileCorrective = [];
-
-        if (this.field.PathCorrective != '') {
-          var countPath = this.field.PathCorrective.length;
-
-          for (var i = 0; i < countPath; i++) {
-            this.oldFileAttachmentCorrective.push(this.field.PathCorrective[i]);
-            this.field.FileCorrective.push("/" + this.field.PathCorrective[i]);
-          }
-        } else {
-          this.oldFileAttachmentCorrective = '';
-        }
-
-        this.field.FilePreventive = [];
-
-        if (this.field.PathPreventive != '') {
-          var _countPath = this.field.PathPreventive.length;
-
-          for (var _i = 0; _i < _countPath; _i++) {
-            this.oldFileAttachmentPreventive.push(this.field.PathPreventive[_i]);
-            this.field.FilePreventive.push("/" + this.field.PathPreventive[_i]);
-          }
-        } else {
-          this.oldFileAttachmentPreventive = '';
-        }
+        // this.field.FileCorrective = []
+        // if(this.field.PathCorrective != ''){
+        //   let countPath = this.field.PathCorrective.length
+        //   for (let i = 0; i < countPath; i++) {
+        //     this.oldFileAttachmentCorrective.push(this.field.PathCorrective[i])
+        //     this.field.FileCorrective.push(process.env.BASE_URL + this.field.PathCorrective[i])
+        //   }
+        // }else{
+        //   this.oldFileAttachmentCorrective = ''
+        // }
+        // this.field.FilePreventive = []
+        // if(this.field.PathPreventive != ''){
+        //   let countPath = this.field.PathPreventive.length
+        //   for (let i = 0; i < countPath; i++) {
+        //     this.oldFileAttachmentPreventive.push(this.field.PathPreventive[i])
+        //     this.field.FilePreventive.push(process.env.BASE_URL + this.field.PathPreventive[i])
+        //   }
+        // }else{
+        //   this.oldFileAttachmentPreventive = ''
+        // }
 
         this.getAuditDetail(this.field.IdAuditCapaPlane, this.field.IdAuditReport, this.field.IdAuditSelection);
       }.bind(this))["catch"](function (e) {
@@ -558,7 +230,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     convertSelectBox: function convertSelectBox(_ref) {
       var NoTrans = _ref.NoTrans,
-          DepartmentAuditee = _ref.DepartmentAuditee;
+        DepartmentAuditee = _ref.DepartmentAuditee;
       return "".concat(NoTrans, " - ").concat(DepartmentAuditee);
     },
     getAuditDetailSelect: function getAuditDetailSelect(option) {
@@ -590,10 +262,10 @@ __webpack_require__.r(__webpack_exports__);
         this.field.ExecutionPreventiveAction = PlanCapaReport.ExecutionPreventiveAction;
         this.field.File = [];
         var countPath = AuditReport.Path.length;
-
         for (var i = 0; i < countPath; i++) {
           this.field.File.push("/" + AuditReport.Path[i]);
-        } // this.field.FileCorrective = []
+        }
+        // this.field.FileCorrective = []
         // let countPathCorrective = PlanCapaReport.PathCorrective.length
         // for (let i = 0; i < countPathCorrective; i++) {
         //   this.field.FileCorrective.push(process.env.BASE_URL + PlanCapaReport.PathCorrective[i])
@@ -603,7 +275,6 @@ __webpack_require__.r(__webpack_exports__);
         // for (let i = 0; i < countPathPreventive; i++) {
         //   this.field.FilePreventive.push(process.env.BASE_URL + PlanCapaReport.PathPreventive[i])
         // }
-
       }.bind(this))["catch"](function (e) {
         console.log(e);
       }.bind(this));
@@ -645,7 +316,8 @@ __webpack_require__.r(__webpack_exports__);
       // example of instance method call on pond reference
       this.field.File = files.map(function (files) {
         return files.file;
-      }); // console.log( this.field.myFile )
+      });
+      // console.log( this.field.myFile )
     },
     priviewFileCorrective: function priviewFileCorrective() {
       if (this.oldFileAttachmentCorrective != '') {
@@ -673,14 +345,38 @@ __webpack_require__.r(__webpack_exports__);
         return files.file;
       });
     },
+    handleFinish: function handleFinish(error, file) {
+      if (this.textBtnSubmit == 'Update') {
+        this.field.FileCorrective = [];
+        if (this.field.PathCorrective != '') {
+          var countPath = this.field.PathCorrective.length;
+          for (var i = 0; i < countPath; i++) {
+            this.oldFileAttachmentCorrective.push(this.field.PathCorrective[i]);
+            this.field.FileCorrective.push("/" + this.field.PathCorrective[i]);
+          }
+        } else {
+          this.oldFileAttachmentCorrective = '';
+        }
+        this.field.FilePreventive = [];
+        if (this.field.PathPreventive != '') {
+          var _countPath = this.field.PathPreventive.length;
+          for (var _i = 0; _i < _countPath; _i++) {
+            this.oldFileAttachmentPreventive.push(this.field.PathPreventive[_i]);
+            this.field.FilePreventive.push("/" + this.field.PathPreventive[_i]);
+          }
+        } else {
+          this.oldFileAttachmentPreventive = '';
+        }
+      }
+    },
     handleRemoveCorrective: function handleRemoveCorrective(error, files) {
-      if (this.isFormEdit == true) {
+      if (this.textBtnSubmit == 'Update') {
         var index = this.oldFileAttachmentCorrective.indexOf(files.source.replace('/clouds', 'clouds'));
         this.oldFileAttachmentCorrective.splice(index, 1);
       }
     },
     handleRemovePreventive: function handleRemovePreventive(error, files) {
-      if (this.isFormEdit == true) {
+      if (this.textBtnSubmit == 'Update') {
         var index = this.oldFileAttachmentPreventive.indexOf(files.source.replace('/clouds', 'clouds'));
         this.oldFileAttachmentPreventive.splice(index, 1);
       }
@@ -689,7 +385,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     if (this.$route.params.isFormEdit) {
       var Id = this.$route.params.Id;
-
       if (Id) {
         this.getData(Id, false);
         this.field.Id = Id;
@@ -698,13 +393,11 @@ __webpack_require__.r(__webpack_exports__);
         this.textBtnSubmit = 'Update';
       }
     }
-
     if (this.$route.params.isFormRevisi) {
       this.getSelect(false);
       this.isAuditee = false;
       document.getElementById("formAuditee").style.pointerEvents = "none";
       var Id = this.$route.params.Id;
-
       if (this.$route.params.isFormEditRevisi) {
         if (Id) {
           this.getData(Id, true);
@@ -730,10 +423,565 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: function() { return /* binding */ render; },
+/* harmony export */   staticRenderFns: function() { return /* binding */ staticRenderFns; }
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("b-card", {
+    staticClass: "mb-4",
+    attrs: {
+      header: _vm.headerCard,
+      "header-tag": "h4"
+    }
+  }, [_vm.isNotif ? _c("div", {
+    staticClass: "alert alert-dismissible fade show",
+    "class": [_vm.alertVariant]
+  }, [_c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "alert"
+    },
+    on: {
+      click: function click($event) {
+        _vm.isNotif = !_vm.isNotif;
+      }
+    }
+  }, [_vm._v("×")]), _vm._v("\n      " + _vm._s(_vm.alertNotif) + "\n    ")]) : _vm._e(), _vm._v(" "), _c("form", {
+    attrs: {
+      method: "POST"
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.submitForm();
+      }
+    }
+  }, [_c("div", {
+    attrs: {
+      id: "formAuditee"
+    }
+  }, [_c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Id Audit")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Dipilih")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsIdAudit,
+      "allow-empty": false,
+      "show-labels": false,
+      "custom-label": _vm.convertSelectBox,
+      placeholder: "Pilih Id Audit Plan",
+      label: "Id",
+      "track-by": "Id",
+      required: ""
+    },
+    on: {
+      select: _vm.getAuditDetailSelect
+    },
+    model: {
+      value: _vm.field.IdAuditPlan,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "IdAuditPlan", $$v);
+      },
+      expression: "field.IdAuditPlan"
+    }
+  }), _vm._v(" "), _vm.allErrors.IdAuditPlan ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.IdAuditPlan[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Audit Date")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDate,
+      state: _vm.allErrors.AuditorDate ? false : null,
+      bootstrapStyling: true,
+      disabled: true
+    },
+    model: {
+      value: _vm.field.AuditorDate,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditorDate", $$v);
+      },
+      expression: "field.AuditorDate"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Ref.Number")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "RefNumber",
+      state: _vm.allErrors.RefNumber ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.RefNumber,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "RefNumber", $$v);
+      },
+      expression: "field.RefNumber"
+    }
+  }), _vm._v(" "), _vm.allErrors.RefNumber ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.RefNumber[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-card", {
+    staticClass: "mb-4",
+    scopedSlots: _vm._u([{
+      key: "header",
+      fn: function fn() {
+        return [_c("h4", [_vm._v("Standar Audit")])];
+      },
+      proxy: true
+    }])
+  }, [_vm._v(" "), _vm._l(_vm.field.AuditClause, function (item, index) {
+    return _c("b-form-row", {
+      key: index
+    }, [_c("b-form-group", {
+      staticClass: "col-md-6"
+    }, [index == 0 ? _c("label", [_vm._v("Standar ")]) : _vm._e(), _vm._v(" "), _c("b-input", {
+      staticClass: "mb-1",
+      attrs: {
+        name: "StandartAudit",
+        state: _vm.allErrors.StandartAudit ? false : null,
+        readonly: ""
+      },
+      model: {
+        value: item.StandartAudit,
+        callback: function callback($$v) {
+          _vm.$set(item, "StandartAudit", $$v);
+        },
+        expression: "item.StandartAudit"
+      }
+    }), _vm._v(" "), _vm.allErrors.StandartAudit ? _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v(_vm._s(_vm.allErrors.StandartAudit[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+      staticClass: "col-md-6"
+    }, [index == 0 ? _c("label", [_vm._v("Clause")]) : _vm._e(), _vm._v(" "), _c("b-input", {
+      staticClass: "mb-1",
+      attrs: {
+        name: "Clause",
+        state: _vm.allErrors.Clause ? false : null,
+        readonly: ""
+      },
+      model: {
+        value: item.Clause,
+        callback: function callback($$v) {
+          _vm.$set(item, "Clause", $$v);
+        },
+        expression: "item.Clause"
+      }
+    }), _vm._v(" "), _vm.allErrors.Clause ? _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v(_vm._s(_vm.allErrors.Clause[0]))]) : _vm._e()], 1)], 1);
+  })], 2), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Type of Non Conformity")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "TypeNonConformity",
+      state: _vm.allErrors.TypeNonConformity ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.TypeNonConformity,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "TypeNonConformity", $$v);
+      },
+      expression: "field.TypeNonConformity"
+    }
+  }), _vm._v(" "), _vm.allErrors.TypeNonConformity ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.TypeNonConformity[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Potential Non Comformity")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "PotentialNonConformitiy",
+      rows: "3",
+      "no-resize": "",
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.PotentialNonConformitiy,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "PotentialNonConformitiy", $$v);
+      },
+      expression: "field.PotentialNonConformitiy"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Attachment")]), _vm._v(" "), _c("file-pond", {
+    ref: "pondMyFile",
+    attrs: {
+      name: "File",
+      "label-idle": "Attachment",
+      "allow-multiple": true,
+      files: _vm.field.File,
+      disabled: true
+    },
+    on: {
+      addfile: _vm.handleFinish,
+      updatefiles: _vm.handleFile
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Kondisi Saat Ini")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "ConditionNow",
+      rows: "3",
+      "no-resize": "",
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.ConditionNow,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "ConditionNow", $$v);
+      },
+      expression: "field.ConditionNow"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Gap Analysis")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "GapAnalysis",
+      rows: "3",
+      "no-resize": "",
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.GapAnalysis,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "GapAnalysis", $$v);
+      },
+      expression: "field.GapAnalysis"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Potential Clause Non Comformity")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "PotentialCauseNonConformitiy",
+      rows: "3",
+      "no-resize": "",
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.PotentialCauseNonConformitiy,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "PotentialCauseNonConformitiy", $$v);
+      },
+      expression: "field.PotentialCauseNonConformitiy"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Corrective Action")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "CorrectiveAction",
+      rows: "3",
+      "no-resize": "",
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.CorrectiveAction,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "CorrectiveAction", $$v);
+      },
+      expression: "field.CorrectiveAction"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Execution Plan")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDate,
+      state: _vm.allErrors.ExecutionPlaneCorrective ? false : null,
+      bootstrapStyling: true,
+      disabled: true
+    },
+    model: {
+      value: _vm.field.ExecutionPlaneCorrective,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "ExecutionPlaneCorrective", $$v);
+      },
+      expression: "field.ExecutionPlaneCorrective"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Attachment")]), _vm._v(" "), _vm.IsAuditee === true ? _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Dipilih")]) : _vm._e(), _vm._v(" "), _c("file-pond", {
+    ref: "pondMyFile",
+    attrs: {
+      name: "FileCorrective",
+      "label-idle": "Attachment",
+      "allow-multiple": true,
+      id: "FileCorrective",
+      files: _vm.field.FileCorrective,
+      required: ""
+    },
+    on: {
+      updatefiles: _vm.handleFileCorrective,
+      removefile: _vm.handleRemoveCorrective
+    }
+  }), _vm._v(" "), _vm.textBtnSubmit == "Update" ? _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.priviewFileCorrective();
+      }
+    }
+  }, [_vm._v("Preview File")]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Preventive Action")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "PreventiveAction",
+      rows: "3",
+      "no-resize": "",
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.PreventiveAction,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "PreventiveAction", $$v);
+      },
+      expression: "field.PreventiveAction"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Execution Plan")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDate,
+      state: _vm.allErrors.ExecutionPreventiveAction ? false : null,
+      bootstrapStyling: true,
+      disabled: true
+    },
+    model: {
+      value: _vm.field.ExecutionPreventiveAction,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "ExecutionPreventiveAction", $$v);
+      },
+      expression: "field.ExecutionPreventiveAction"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Attachment")]), _vm._v(" "), _vm.IsAuditee === true ? _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Dipilih")]) : _vm._e(), _vm._v(" "), _c("file-pond", {
+    ref: "pondMyFile",
+    attrs: {
+      name: "FilePreventive",
+      id: "FilePreventive",
+      "label-idle": "Attachment",
+      "allow-multiple": true,
+      files: _vm.field.FilePreventive,
+      disabled: false,
+      required: ""
+    },
+    on: {
+      updatefiles: _vm.handleFilePreventive,
+      removefile: _vm.handleRemovePreventive
+    }
+  }), _vm._v(" "), _vm.textBtnSubmit == "Update" ? _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.priviewFilePreventive();
+      }
+    }
+  }, [_vm._v("Preview File")]) : _vm._e()], 1)], 1)], 1), _vm._v(" "), _vm.isAuditee === false ? _c("div", [_c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Verification Result CAPA")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Dipilih")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsVerif,
+      "allow-empty": false,
+      "show-labels": false,
+      placeholder: "Pilih Verification Result CAPA",
+      label: "Name",
+      "track-by": "Name"
+    },
+    on: {
+      select: _vm.getVerificationCapaSelect
+    },
+    model: {
+      value: _vm.field.VerificationExecution,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "VerificationExecution", $$v);
+      },
+      expression: "field.VerificationExecution"
+    }
+  }), _vm._v(" "), _vm.allErrors.Organizer ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Organizer[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Re-Audit")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsReaudit,
+      "allow-empty": false,
+      "show-labels": false,
+      placeholder: "Pilih Reaudit",
+      label: "text",
+      "track-by": "text",
+      disabled: _vm.isDisabled,
+      required: _vm.isRequired
+    },
+    on: {
+      select: _vm.getReauditSelect
+    },
+    model: {
+      value: _vm.field.ReAudit,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "ReAudit", $$v);
+      },
+      expression: "field.ReAudit"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Re-Audit Date")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDate,
+      state: _vm.allErrors.ReAuditDate ? false : null,
+      bootstrapStyling: true,
+      disabled: _vm.isDisabledAudit,
+      required: _vm.isRequired
+    },
+    model: {
+      value: _vm.field.ReAuditDate,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "ReAuditDate", $$v);
+      },
+      expression: "field.ReAuditDate"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Status Audit")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "Status",
+      state: _vm.allErrors.Status ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.Status,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Status", $$v);
+      },
+      expression: "field.Status"
+    }
+  }), _vm._v(" "), _vm.allErrors.Status ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Status[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Recommendation Execution")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "RecommendationExecution",
+      rows: "3",
+      "no-resize": "",
+      readonly: _vm.isReadonly,
+      required: _vm.isRequired
+    },
+    model: {
+      value: _vm.field.RecommendationExecution,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "RecommendationExecution", $$v);
+      },
+      expression: "field.RecommendationExecution"
+    }
+  })], 1)], 1)], 1) : _vm._e(), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6",
+    attrs: {
+      label: ""
+    }
+  }, [_c("b-btn", {
+    staticClass: "float-right ml-2",
+    attrs: {
+      type: "submit",
+      variant: "primary"
+    }
+  }, [_vm._v(_vm._s(_vm.textBtnSubmit))]), _vm._v(" "), _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.backIndex();
+      }
+    }
+  }, [_vm._v("Back")])], 1)], 1)], 1)])], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -751,17 +999,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n#FileCorrective .filepond--panel-roo
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_5f647acc_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&id=5f647acc&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css&");
 
             
 
@@ -770,11 +1018,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_5f647acc_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_5f647acc_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -788,7 +1036,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.vue?vue&type=template&id=5f647acc& */ "./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc&");
 /* harmony import */ var _form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form.vue?vue&type=script&lang=js& */ "./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js&");
-/* harmony import */ var _form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&lang=css& */ "./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _form_vue_vue_type_style_index_0_id_5f647acc_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&id=5f647acc&lang=css& */ "./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -824,21 +1072,8 @@ component.options.__file = "resources/assets/src/components/backend/audit/verifi
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js&");
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css&":
-/*!**************************************************************************************************************************!*\
-  !*** ./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css& ***!
-  \**************************************************************************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&lang=css&");
-
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=script&lang=js&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -851,997 +1086,23 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=5f647acc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_5f647acc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=5f647acc& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc&");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc&":
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=template&id=5f647acc& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css& ***!
+  \**************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* binding */ render; },
-/* harmony export */   "staticRenderFns": function() { return /* binding */ staticRenderFns; }
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-card",
-        {
-          staticClass: "mb-4",
-          attrs: { header: _vm.headerCard, "header-tag": "h4" },
-        },
-        [
-          _vm.isNotif
-            ? _c(
-                "div",
-                {
-                  staticClass: "alert alert-dismissible fade show",
-                  class: [_vm.alertVariant],
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "close",
-                      attrs: { type: "button", "data-dismiss": "alert" },
-                      on: {
-                        click: function ($event) {
-                          _vm.isNotif = !_vm.isNotif
-                        },
-                      },
-                    },
-                    [_vm._v("×")]
-                  ),
-                  _vm._v("\n      " + _vm._s(_vm.alertNotif) + "\n    "),
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              attrs: { method: "POST" },
-              on: {
-                submit: function ($event) {
-                  $event.preventDefault()
-                  return _vm.submitForm()
-                },
-              },
-            },
-            [
-              _c(
-                "div",
-                { attrs: { id: "formAuditee" } },
-                [
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-4" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Id Audit"),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              staticClass: "form-label float-right text-danger",
-                            },
-                            [_vm._v("*Wajib Dipilih")]
-                          ),
-                          _vm._v(" "),
-                          _c("multiselect", {
-                            attrs: {
-                              options: _vm.opsIdAudit,
-                              "allow-empty": false,
-                              "show-labels": false,
-                              "custom-label": _vm.convertSelectBox,
-                              placeholder: "Pilih Id Audit Plan",
-                              label: "Id",
-                              "track-by": "Id",
-                              required: "",
-                            },
-                            on: { select: _vm.getAuditDetailSelect },
-                            model: {
-                              value: _vm.field.IdAuditPlan,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "IdAuditPlan", $$v)
-                              },
-                              expression: "field.IdAuditPlan",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _vm.allErrors.IdAuditPlan
-                            ? _c("span", { staticClass: "text-danger" }, [
-                                _vm._v(_vm._s(_vm.allErrors.IdAuditPlan[0])),
-                              ])
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-4" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Audit Date"),
-                          ]),
-                          _vm._v(" "),
-                          _c("datepicker", {
-                            staticClass: "mb-1",
-                            attrs: {
-                              format: _vm.formatDate,
-                              state: _vm.allErrors.AuditorDate ? false : null,
-                              bootstrapStyling: true,
-                              disabled: true,
-                            },
-                            model: {
-                              value: _vm.field.AuditorDate,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "AuditorDate", $$v)
-                              },
-                              expression: "field.AuditorDate",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-4" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Ref.Number"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-input", {
-                            staticClass: "mb-1",
-                            attrs: {
-                              name: "RefNumber",
-                              state: _vm.allErrors.RefNumber ? false : null,
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.RefNumber,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "RefNumber", $$v)
-                              },
-                              expression: "field.RefNumber",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _vm.allErrors.RefNumber
-                            ? _c("span", { staticClass: "text-danger" }, [
-                                _vm._v(_vm._s(_vm.allErrors.RefNumber[0])),
-                              ])
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-card",
-                    {
-                      staticClass: "mb-4",
-                      scopedSlots: _vm._u([
-                        {
-                          key: "header",
-                          fn: function () {
-                            return [_c("h4", [_vm._v("Standar Audit")])]
-                          },
-                          proxy: true,
-                        },
-                      ]),
-                    },
-                    [
-                      _vm._v(" "),
-                      _vm._l(_vm.field.AuditClause, function (item, index) {
-                        return _c(
-                          "b-form-row",
-                          { key: index },
-                          [
-                            _c(
-                              "b-form-group",
-                              { staticClass: "col-md-6" },
-                              [
-                                index == 0
-                                  ? _c("label", [_vm._v("Standar ")])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c("b-input", {
-                                  staticClass: "mb-1",
-                                  attrs: {
-                                    name: "StandartAudit",
-                                    state: _vm.allErrors.StandartAudit
-                                      ? false
-                                      : null,
-                                    readonly: "",
-                                  },
-                                  model: {
-                                    value: item.StandartAudit,
-                                    callback: function ($$v) {
-                                      _vm.$set(item, "StandartAudit", $$v)
-                                    },
-                                    expression: "item.StandartAudit",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _vm.allErrors.StandartAudit
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(
-                                        _vm._s(_vm.allErrors.StandartAudit[0])
-                                      ),
-                                    ])
-                                  : _vm._e(),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "b-form-group",
-                              { staticClass: "col-md-6" },
-                              [
-                                index == 0
-                                  ? _c("label", [_vm._v("Clause")])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c("b-input", {
-                                  staticClass: "mb-1",
-                                  attrs: {
-                                    name: "Clause",
-                                    state: _vm.allErrors.Clause ? false : null,
-                                    readonly: "",
-                                  },
-                                  model: {
-                                    value: item.Clause,
-                                    callback: function ($$v) {
-                                      _vm.$set(item, "Clause", $$v)
-                                    },
-                                    expression: "item.Clause",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _vm.allErrors.Clause
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(_vm._s(_vm.allErrors.Clause[0])),
-                                    ])
-                                  : _vm._e(),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        )
-                      }),
-                    ],
-                    2
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-6" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Type of Non Conformity"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-input", {
-                            staticClass: "mb-1",
-                            attrs: {
-                              name: "TypeNonConformity",
-                              state: _vm.allErrors.TypeNonConformity
-                                ? false
-                                : null,
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.TypeNonConformity,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "TypeNonConformity", $$v)
-                              },
-                              expression: "field.TypeNonConformity",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _vm.allErrors.TypeNonConformity
-                            ? _c("span", { staticClass: "text-danger" }, [
-                                _vm._v(
-                                  _vm._s(_vm.allErrors.TypeNonConformity[0])
-                                ),
-                              ])
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-6" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Potential Non Comformity"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              name: "PotentialNonConformitiy",
-                              rows: "3",
-                              "no-resize": "",
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.PotentialNonConformitiy,
-                              callback: function ($$v) {
-                                _vm.$set(
-                                  _vm.field,
-                                  "PotentialNonConformitiy",
-                                  $$v
-                                )
-                              },
-                              expression: "field.PotentialNonConformitiy",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-12" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Attachment"),
-                          ]),
-                          _vm._v(" "),
-                          _c("file-pond", {
-                            ref: "pondMyFile",
-                            attrs: {
-                              name: "File",
-                              "label-idle": "Attachment",
-                              "allow-multiple": true,
-                              files: _vm.field.File,
-                              disabled: true,
-                            },
-                            on: { updatefiles: _vm.handleFile },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-12" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Kondisi Saat Ini"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              name: "ConditionNow",
-                              rows: "3",
-                              "no-resize": "",
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.ConditionNow,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "ConditionNow", $$v)
-                              },
-                              expression: "field.ConditionNow",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-12" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Gap Analysis"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              name: "GapAnalysis",
-                              rows: "3",
-                              "no-resize": "",
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.GapAnalysis,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "GapAnalysis", $$v)
-                              },
-                              expression: "field.GapAnalysis",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-12" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Potential Clause Non Comformity"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              name: "PotentialCauseNonConformitiy",
-                              rows: "3",
-                              "no-resize": "",
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.PotentialCauseNonConformitiy,
-                              callback: function ($$v) {
-                                _vm.$set(
-                                  _vm.field,
-                                  "PotentialCauseNonConformitiy",
-                                  $$v
-                                )
-                              },
-                              expression: "field.PotentialCauseNonConformitiy",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-6" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Corrective Action"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              name: "CorrectiveAction",
-                              rows: "3",
-                              "no-resize": "",
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.CorrectiveAction,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "CorrectiveAction", $$v)
-                              },
-                              expression: "field.CorrectiveAction",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-6" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Execution Plan"),
-                          ]),
-                          _vm._v(" "),
-                          _c("datepicker", {
-                            staticClass: "mb-1",
-                            attrs: {
-                              format: _vm.formatDate,
-                              state: _vm.allErrors.ExecutionPlaneCorrective
-                                ? false
-                                : null,
-                              bootstrapStyling: true,
-                              disabled: true,
-                            },
-                            model: {
-                              value: _vm.field.ExecutionPlaneCorrective,
-                              callback: function ($$v) {
-                                _vm.$set(
-                                  _vm.field,
-                                  "ExecutionPlaneCorrective",
-                                  $$v
-                                )
-                              },
-                              expression: "field.ExecutionPlaneCorrective",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-12" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Attachment"),
-                          ]),
-                          _vm._v(" "),
-                          _vm.IsAuditee === true
-                            ? _c(
-                                "label",
-                                {
-                                  staticClass:
-                                    "form-label float-right text-danger",
-                                },
-                                [_vm._v("*Wajib Dipilih")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c("file-pond", {
-                            ref: "pondMyFile",
-                            attrs: {
-                              name: "FileCorrective",
-                              "label-idle": "Attachment",
-                              "allow-multiple": true,
-                              id: "FileCorrective",
-                              files: _vm.field.FileCorrective,
-                              required: "",
-                            },
-                            on: {
-                              updatefiles: _vm.handleFileCorrective,
-                              removefile: _vm.handleRemoveCorrective,
-                            },
-                          }),
-                          _vm._v(" "),
-                          _vm.textBtnSubmit == "Update"
-                            ? _c(
-                                "b-btn",
-                                {
-                                  staticClass: "float-right",
-                                  attrs: {
-                                    type: "button",
-                                    variant: "secondary",
-                                  },
-                                  on: {
-                                    click: function ($event) {
-                                      return _vm.priviewFileCorrective()
-                                    },
-                                  },
-                                },
-                                [_vm._v("Preview File")]
-                              )
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-6" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Preventive Action"),
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              name: "PreventiveAction",
-                              rows: "3",
-                              "no-resize": "",
-                              readonly: "",
-                            },
-                            model: {
-                              value: _vm.field.PreventiveAction,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.field, "PreventiveAction", $$v)
-                              },
-                              expression: "field.PreventiveAction",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-6" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Execution Plan"),
-                          ]),
-                          _vm._v(" "),
-                          _c("datepicker", {
-                            staticClass: "mb-1",
-                            attrs: {
-                              format: _vm.formatDate,
-                              state: _vm.allErrors.ExecutionPreventiveAction
-                                ? false
-                                : null,
-                              bootstrapStyling: true,
-                              disabled: true,
-                            },
-                            model: {
-                              value: _vm.field.ExecutionPreventiveAction,
-                              callback: function ($$v) {
-                                _vm.$set(
-                                  _vm.field,
-                                  "ExecutionPreventiveAction",
-                                  $$v
-                                )
-                              },
-                              expression: "field.ExecutionPreventiveAction",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-row",
-                    [
-                      _c(
-                        "b-form-group",
-                        { staticClass: "col-md-12" },
-                        [
-                          _c("label", { staticClass: "form-label" }, [
-                            _vm._v("Attachment"),
-                          ]),
-                          _vm._v(" "),
-                          _vm.IsAuditee === true
-                            ? _c(
-                                "label",
-                                {
-                                  staticClass:
-                                    "form-label float-right text-danger",
-                                },
-                                [_vm._v("*Wajib Dipilih")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c("file-pond", {
-                            ref: "pondMyFile",
-                            attrs: {
-                              name: "FilePreventive",
-                              id: "FilePreventive",
-                              "label-idle": "Attachment",
-                              "allow-multiple": true,
-                              files: _vm.field.FilePreventive,
-                              disabled: false,
-                              required: "",
-                            },
-                            on: {
-                              updatefiles: _vm.handleFilePreventive,
-                              removefile: _vm.handleRemovePreventive,
-                            },
-                          }),
-                          _vm._v(" "),
-                          _vm.textBtnSubmit == "Update"
-                            ? _c(
-                                "b-btn",
-                                {
-                                  staticClass: "float-right",
-                                  attrs: {
-                                    type: "button",
-                                    variant: "secondary",
-                                  },
-                                  on: {
-                                    click: function ($event) {
-                                      return _vm.priviewFilePreventive()
-                                    },
-                                  },
-                                },
-                                [_vm._v("Preview File")]
-                              )
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm.isAuditee === false
-                ? _c(
-                    "div",
-                    [
-                      _c(
-                        "b-form-row",
-                        [
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-4" },
-                            [
-                              _c("label", { staticClass: "form-label" }, [
-                                _vm._v("Verification Result CAPA"),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass:
-                                    "form-label float-right text-danger",
-                                },
-                                [_vm._v("*Wajib Dipilih")]
-                              ),
-                              _vm._v(" "),
-                              _c("multiselect", {
-                                attrs: {
-                                  options: _vm.opsVerif,
-                                  "allow-empty": false,
-                                  "show-labels": false,
-                                  placeholder: "Pilih Verification Result CAPA",
-                                  label: "Name",
-                                  "track-by": "Name",
-                                },
-                                on: { select: _vm.getVerificationCapaSelect },
-                                model: {
-                                  value: _vm.field.VerificationExecution,
-                                  callback: function ($$v) {
-                                    _vm.$set(
-                                      _vm.field,
-                                      "VerificationExecution",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "field.VerificationExecution",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _vm.allErrors.Organizer
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.allErrors.Organizer[0])),
-                                  ])
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-4" },
-                            [
-                              _c("label", { staticClass: "form-label" }, [
-                                _vm._v("Re-Audit"),
-                              ]),
-                              _vm._v(" "),
-                              _c("multiselect", {
-                                attrs: {
-                                  options: _vm.opsReaudit,
-                                  "allow-empty": false,
-                                  "show-labels": false,
-                                  placeholder: "Pilih Reaudit",
-                                  label: "text",
-                                  "track-by": "text",
-                                  disabled: _vm.isDisabled,
-                                  required: _vm.isRequired,
-                                },
-                                on: { select: _vm.getReauditSelect },
-                                model: {
-                                  value: _vm.field.ReAudit,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.field, "ReAudit", $$v)
-                                  },
-                                  expression: "field.ReAudit",
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-4" },
-                            [
-                              _c("label", { staticClass: "form-label" }, [
-                                _vm._v("Re-Audit Date"),
-                              ]),
-                              _vm._v(" "),
-                              _c("datepicker", {
-                                staticClass: "mb-1",
-                                attrs: {
-                                  format: _vm.formatDate,
-                                  state: _vm.allErrors.ReAuditDate
-                                    ? false
-                                    : null,
-                                  bootstrapStyling: true,
-                                  disabled: _vm.isDisabledAudit,
-                                  required: _vm.isRequired,
-                                },
-                                model: {
-                                  value: _vm.field.ReAuditDate,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.field, "ReAuditDate", $$v)
-                                  },
-                                  expression: "field.ReAuditDate",
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-row",
-                        [
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-6" },
-                            [
-                              _c("label", { staticClass: "form-label" }, [
-                                _vm._v("Status Audit"),
-                              ]),
-                              _vm._v(" "),
-                              _c("b-input", {
-                                staticClass: "mb-1",
-                                attrs: {
-                                  name: "Status",
-                                  state: _vm.allErrors.Status ? false : null,
-                                  readonly: "",
-                                },
-                                model: {
-                                  value: _vm.field.Status,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.field, "Status", $$v)
-                                  },
-                                  expression: "field.Status",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _vm.allErrors.Status
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.allErrors.Status[0])),
-                                  ])
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-6" },
-                            [
-                              _c("label", { staticClass: "form-label" }, [
-                                _vm._v("Recommendation Execution"),
-                              ]),
-                              _vm._v(" "),
-                              _c("b-form-textarea", {
-                                attrs: {
-                                  name: "RecommendationExecution",
-                                  rows: "3",
-                                  "no-resize": "",
-                                  readonly: _vm.isReadonly,
-                                  required: _vm.isRequired,
-                                },
-                                model: {
-                                  value: _vm.field.RecommendationExecution,
-                                  callback: function ($$v) {
-                                    _vm.$set(
-                                      _vm.field,
-                                      "RecommendationExecution",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "field.RecommendationExecution",
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c("b-form-group", { staticClass: "col-md-6" }),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6", attrs: { label: "" } },
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "float-right ml-2",
-                          attrs: { type: "submit", variant: "primary" },
-                        },
-                        [_vm._v(_vm._s(_vm.textBtnSubmit))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "float-right",
-                          attrs: { type: "button", variant: "secondary" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.backIndex()
-                            },
-                          },
-                        },
-                        [_vm._v("Back")]
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ]
-      ),
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_5f647acc_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&id=5f647acc&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/verification-capa-report/form.vue?vue&type=style&index=0&id=5f647acc&lang=css&");
 
 
 /***/ }),

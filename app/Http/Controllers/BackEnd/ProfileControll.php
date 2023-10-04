@@ -45,11 +45,16 @@ class ProfileControll extends Controller
                 'pst.Name as Position',
                 'pst.JobDesk',
                 'cty.Name as City',
-                'emp.UpdateAt')
+                'ua.Action as accessMenuDB',
+                'emp.UpdateAt'
+            )
             ->leftjoin('employee as emp','emp.Id','=','usr.IdEmployee')
             ->leftjoin('department as dpt','dpt.Id','=','emp.IdDepartment')
             ->leftjoin('position as pst','pst.Id','=','emp.IdPosition')
             ->leftjoin('city as cty','cty.Id','=','emp.IdCity')
+            ->leftjoin('users_detail as usrd','usrd.IdUsers','=','usr.Id')
+            ->leftjoin('user_access as ua','ua.IdTypeUser','=','usrd.TypeUser')
+            ->where('ua.IdTypeUser', session('adminvue')->TypeUser)
             ->where('usr.Actived','>',0)
             ->where('usr.Id', session('adminvue')->Id)
             ->first();
@@ -61,6 +66,7 @@ class ProfileControll extends Controller
         if(!empty($item)){
             $item->DateBirth = Carbon::parse($item->DateBirth)->format('d/m/Y');
             $item->UpdateAt = Carbon::parse($item->UpdateAt)->format('l, d-m-Y H:i:s');
+            $item->accessMenuDB = json_decode($item->accessMenuDB, true);
         }
 
         return json_encode(array(

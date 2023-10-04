@@ -1,9 +1,9 @@
 (self["webpackChunkaudit_widatra"] = self["webpackChunkaudit_widatra"] || []).push([["resources_assets_src_components_backend_audit_auditor-report_form_vue"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,175 +12,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_text_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-text-mask */ "./node_modules/vue-text-mask/dist/vueTextMask.js");
 /* harmony import */ var vue_text_mask__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_text_mask__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -240,8 +71,8 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
       formData.append("Id", this.field.Id);
       formData.append("NoTrans", this.field.IdAuditPlan.NoTrans);
-      formData.append("IdAuditSelection", this.field.IdAuditPlan.Id); // formData.append("CriteriaFound", this.field.CriteriaFound.Id)
-
+      formData.append("IdAuditSelection", this.field.IdAuditPlan.Id);
+      // formData.append("CriteriaFound", this.field.CriteriaFound.Id)
       formData.append("IdAuditPlane", this.field.IdAuditPlan.IdAuditPlane);
       formData.append("IdDepartmentAuditee", this.field.IdAuditPlan.IdDepartmentAuditee);
       formData.append("IdPositionAuditee", this.field.IdPositionAuditee);
@@ -253,12 +84,10 @@ __webpack_require__.r(__webpack_exports__);
       formData.append("HeadAuditeePosition", this.field.HeadAuditeePosition);
       formData.append("IdLeadAuditor", this.field.IdLeadAuditor);
       formData.append("CriteriaFound", JSON.stringify(this.field.CriteriaFound));
-
       for (var i = 0; i < this.field.File.length; i++) {
         var file = this.field.File[i];
         formData.append('FileAttachment[' + i + ']', file);
       }
-
       formData.append("OldFileAttachment", JSON.stringify(this.oldFileAttachment));
       var config = {
         headers: {
@@ -267,7 +96,6 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post(this.urlSubmit, formData, config).then(function (res) {
         var resp = res.data;
-
         if (resp.status) {
           this.$router.push({
             name: 'audit/data-auditor-report',
@@ -298,10 +126,8 @@ __webpack_require__.r(__webpack_exports__);
         var resp = res.data;
         this.field = resp.data;
         this.field.File = [];
-
         if (this.field.Path != '') {
           var countPath = this.field.Path.length;
-
           for (var i = 0; i < countPath; i++) {
             this.oldFileAttachment.push(this.field.Path[i]);
             this.field.File.push("/" + this.field.Path[i]);
@@ -309,7 +135,6 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           this.oldFileAttachment = '';
         }
-
         var Year = moment__WEBPACK_IMPORTED_MODULE_0___default()(this.field.OpeningMeeting).format('YYYY');
         var Month = moment__WEBPACK_IMPORTED_MODULE_0___default()(this.field.OpeningMeeting).format('MM') - 1;
         var Day = moment__WEBPACK_IMPORTED_MODULE_0___default()(this.field.OpeningMeeting).format('DD');
@@ -334,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     convertSelectBox: function convertSelectBox(_ref) {
       var NoTrans = _ref.NoTrans,
-          DepartmentAuditee = _ref.DepartmentAuditee;
+        DepartmentAuditee = _ref.DepartmentAuditee;
       return "".concat(NoTrans, " - ").concat(DepartmentAuditee);
     },
     getAuditDetailSelect: function getAuditDetailSelect(option) {
@@ -359,15 +184,12 @@ __webpack_require__.r(__webpack_exports__);
         this.field.AuditClause = res.data.AuditClause;
         this.field.IdPositionAuditee = res.data.IdPositionAuditee;
         this.field.IdLeadAuditor = res.data.IdLeadAuditor;
-
         for (var index = 0; index < this.field.AuditClause.length; index++) {
           var Clause = JSON.parse(this.field.AuditClause[index].IdClauseAudit);
-
           for (var i = 0; i < Clause.length; i++) {
             this.clauseSelect.push(Clause[i].Id);
           }
         }
-
         this.getFoundCriteria(this.clauseSelect);
       }.bind(this))["catch"](function (e) {
         console.log(e);
@@ -399,18 +221,22 @@ __webpack_require__.r(__webpack_exports__);
       // example of instance method call on pond reference
       this.field.File = files.map(function (files) {
         return files.file;
-      }); // console.log( this.field.myFile )
+      });
+      // console.log( this.field.myFile )
     },
+
     handleRemove: function handleRemove(error, files) {
       if (this.isFormEdit == true) {
         var index = this.oldFileAttachment.indexOf(files.source.replace('/clouds', 'clouds'));
         this.oldFileAttachment.splice(index, 1);
       }
     },
-    getClauseDetail: function getClauseDetail(option) {// this.clauseSelect.push(option.Id)
+    getClauseDetail: function getClauseDetail(option) {
+      // this.clauseSelect.push(option.Id)
       // this.getAuditorDepartment(this.field.AuditeeDepartment.IdDepartmentAuditee,this.clauseSelect,false)
     },
-    removeClauseDetail: function removeClauseDetail(option) {// let index = this.clauseSelect.indexOf(option.Id)
+    removeClauseDetail: function removeClauseDetail(option) {
+      // let index = this.clauseSelect.indexOf(option.Id)
       // this.clauseSelect.splice(index,1)
       // this.getAuditorDepartment(this.field.AuditeeDepartment.IdDepartmentAuditee,this.clauseSelect,false)
     }
@@ -418,7 +244,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     if (this.$route.params.isFormEdit) {
       var Id = this.$route.params.Id;
-
       if (Id) {
         this.getData(Id);
         this.field.Id = Id;
@@ -428,17 +253,382 @@ __webpack_require__.r(__webpack_exports__);
         this.textBtnSubmit = 'Update';
       }
     }
-
     this.getSelect();
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: function() { return /* binding */ render; },
+/* harmony export */   staticRenderFns: function() { return /* binding */ staticRenderFns; }
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("b-card", {
+    staticClass: "mb-4",
+    attrs: {
+      header: _vm.headerCard,
+      "header-tag": "h4"
+    }
+  }, [_vm.isNotif ? _c("div", {
+    staticClass: "alert alert-dismissible fade show",
+    "class": [_vm.alertVariant]
+  }, [_c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "alert"
+    },
+    on: {
+      click: function click($event) {
+        _vm.isNotif = !_vm.isNotif;
+      }
+    }
+  }, [_vm._v("×")]), _vm._v("\n      " + _vm._s(_vm.alertNotif) + "\n    ")]) : _vm._e(), _vm._v(" "), _c("form", {
+    attrs: {
+      method: "POST"
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.submitForm();
+      }
+    }
+  }, [_c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Id Audit Plan")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsIdAudit,
+      "allow-empty": false,
+      "show-labels": false,
+      "custom-label": _vm.convertSelectBox,
+      placeholder: "Pilih Id Audit Plan",
+      label: "NoTrans",
+      "track-by": "NoTrans"
+    },
+    on: {
+      select: _vm.getAuditDetailSelect
+    },
+    model: {
+      value: _vm.field.IdAuditPlan,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "IdAuditPlan", $$v);
+      },
+      expression: "field.IdAuditPlan"
+    }
+  }), _vm._v(" "), _vm.allErrors.Organizer ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Organizer[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Audit Date")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1 audit-report-date",
+    attrs: {
+      format: _vm.formatDate,
+      state: _vm.allErrors.AuditorDate ? false : null,
+      bootstrapStyling: true,
+      "disabled-dates": _vm.disabledDate
+    },
+    model: {
+      value: _vm.field.AuditorDate,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditorDate", $$v);
+      },
+      expression: "field.AuditorDate"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Ref.Number")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "IDAudit",
+      state: _vm.allErrors.IDAudit ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.IDAudit,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "IDAudit", $$v);
+      },
+      expression: "field.IDAudit"
+    }
+  }), _vm._v(" "), _vm.allErrors.IDAudit ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.IDAudit[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Lead Auditor")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "LeadAuditor",
+      state: _vm.allErrors.LeadAuditor ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.LeadAuditor,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "LeadAuditor", $$v);
+      },
+      expression: "field.LeadAuditor"
+    }
+  }), _vm._v(" "), _vm.allErrors.LeadAuditor ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.LeadAuditor[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Auditor")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "Auditor",
+      state: _vm.allErrors.Auditor ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.Auditor,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Auditor", $$v);
+      },
+      expression: "field.Auditor"
+    }
+  }), _vm._v(" "), _vm.allErrors.Organizer ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Organizer[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Auditee")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "Auditee",
+      state: _vm.allErrors.Auditee ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.Auditee,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Auditee", $$v);
+      },
+      expression: "field.Auditee"
+    }
+  }), _vm._v(" "), _vm.allErrors.Organizer ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Organizer[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-card", {
+    staticClass: "mb-4",
+    scopedSlots: _vm._u([{
+      key: "header",
+      fn: function fn() {
+        return [_c("h4", [_vm._v("Standart Audit")])];
+      },
+      proxy: true
+    }])
+  }, [_vm._v(" "), _vm._l(_vm.field.AuditClause, function (item, index) {
+    return _c("b-form-row", {
+      key: index
+    }, [_c("b-form-group", {
+      staticClass: "col-md-6"
+    }, [index == 0 ? _c("label", [_vm._v("Standart ")]) : _vm._e(), _vm._v(" "), _c("b-input", {
+      staticClass: "mb-1",
+      attrs: {
+        name: "StandartAudit",
+        state: _vm.allErrors.StandartAudit ? false : null,
+        readonly: ""
+      },
+      model: {
+        value: item.StandartAudit,
+        callback: function callback($$v) {
+          _vm.$set(item, "StandartAudit", $$v);
+        },
+        expression: "item.StandartAudit"
+      }
+    }), _vm._v(" "), _vm.allErrors.StandartAudit ? _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v(_vm._s(_vm.allErrors.StandartAudit[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+      staticClass: "col-md-6"
+    }, [index == 0 ? _c("label", [_vm._v("Clause")]) : _vm._e(), _vm._v(" "), _c("b-input", {
+      staticClass: "mb-1",
+      attrs: {
+        name: "Clause",
+        state: _vm.allErrors.Clause ? false : null,
+        readonly: ""
+      },
+      model: {
+        value: item.Clause,
+        callback: function callback($$v) {
+          _vm.$set(item, "Clause", $$v);
+        },
+        expression: "item.Clause"
+      }
+    }), _vm._v(" "), _vm.allErrors.Clause ? _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v(_vm._s(_vm.allErrors.Clause[0]))]) : _vm._e()], 1)], 1);
+  })], 2), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-3"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Observer")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "Observer",
+      state: _vm.allErrors.Observer ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.Observer,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Observer", $$v);
+      },
+      expression: "field.Observer"
+    }
+  }), _vm._v(" "), _vm.allErrors.Organizer ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Organizer[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", [_vm._v("Kriteria Temuan")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsClauseAudit,
+      "allow-empty": true,
+      "show-labels": false,
+      multiple: true,
+      placeholder: "Pilih Kriteria Temuan",
+      label: "Requirements",
+      "track-by": "Requirements"
+    },
+    model: {
+      value: _vm.field.CriteriaFound,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "CriteriaFound", $$v);
+      },
+      expression: "field.CriteriaFound"
+    }
+  }), _vm._v(" "), _vm.allErrors.CriteriaFound ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.CriteriaFound[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-3"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Type of Non Conformity")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsType,
+      "allow-empty": false,
+      "show-labels": false,
+      "preselect-first": true,
+      placeholder: "Pilih Type Non Conformity",
+      label: "text",
+      "track-by": "text"
+    },
+    model: {
+      value: _vm.field.TypeNonConformity,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "TypeNonConformity", $$v);
+      },
+      expression: "field.TypeNonConformity"
+    }
+  }), _vm._v(" "), _vm.allErrors.TypeNonConformity ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.TypeNonConformity[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Potential Non Comformity")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "PotentialNonConformitiy",
+      rows: "3",
+      "no-resize": ""
+    },
+    model: {
+      value: _vm.field.PotentialNonConformitiy,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "PotentialNonConformitiy", $$v);
+      },
+      expression: "field.PotentialNonConformitiy"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", [_vm._v("Attachment")]), _vm._v(" "), _c("file-pond", {
+    ref: "pondMyFile",
+    attrs: {
+      name: "File",
+      "label-idle": "Klik Untuk Menambahkan Attachment",
+      "allow-multiple": true,
+      files: _vm.field.File,
+      required: ""
+    },
+    on: {
+      updatefiles: _vm.handleFile,
+      removefile: _vm.handleRemove
+    }
+  }), _vm._v(" "), _vm.textBtnSubmit == "Update" ? _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.priviewFile();
+      }
+    }
+  }, [_vm._v("Preview File")]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6",
+    attrs: {
+      label: ""
+    }
+  }, [_c("b-btn", {
+    staticClass: "float-right ml-2",
+    attrs: {
+      type: "submit",
+      variant: "primary"
+    }
+  }, [_vm._v(_vm._s(_vm.textBtnSubmit))]), _vm._v(" "), _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.backIndex();
+      }
+    }
+  }, [_vm._v("Back")])], 1)], 1)], 1)])], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -456,17 +646,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.audit-report-date .input-group .for
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_1f2221d2_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&id=1f2221d2&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css&");
 
             
 
@@ -475,11 +665,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_1f2221d2_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_1f2221d2_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -493,7 +683,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.vue?vue&type=template&id=1f2221d2& */ "./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2&");
 /* harmony import */ var _form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form.vue?vue&type=script&lang=js& */ "./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js&");
-/* harmony import */ var _form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&lang=css& */ "./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _form_vue_vue_type_style_index_0_id_1f2221d2_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&id=1f2221d2&lang=css& */ "./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -529,21 +719,8 @@ component.options.__file = "resources/assets/src/components/backend/audit/audito
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js&");
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css& ***!
-  \****************************************************************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&lang=css&");
-
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=script&lang=js&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -556,639 +733,23 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=1f2221d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_1f2221d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=1f2221d2& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2&");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2&":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=template&id=1f2221d2& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/***/ "./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css&":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css& ***!
+  \****************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* binding */ render; },
-/* harmony export */   "staticRenderFns": function() { return /* binding */ staticRenderFns; }
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-card",
-        {
-          staticClass: "mb-4",
-          attrs: { header: _vm.headerCard, "header-tag": "h4" },
-        },
-        [
-          _vm.isNotif
-            ? _c(
-                "div",
-                {
-                  staticClass: "alert alert-dismissible fade show",
-                  class: [_vm.alertVariant],
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "close",
-                      attrs: { type: "button", "data-dismiss": "alert" },
-                      on: {
-                        click: function ($event) {
-                          _vm.isNotif = !_vm.isNotif
-                        },
-                      },
-                    },
-                    [_vm._v("×")]
-                  ),
-                  _vm._v("\n      " + _vm._s(_vm.alertNotif) + "\n    "),
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              attrs: { method: "POST" },
-              on: {
-                submit: function ($event) {
-                  $event.preventDefault()
-                  return _vm.submitForm()
-                },
-              },
-            },
-            [
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Id Audit Plan"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          options: _vm.opsIdAudit,
-                          "allow-empty": false,
-                          "show-labels": false,
-                          "custom-label": _vm.convertSelectBox,
-                          placeholder: "Pilih Id Audit Plan",
-                          label: "NoTrans",
-                          "track-by": "NoTrans",
-                        },
-                        on: { select: _vm.getAuditDetailSelect },
-                        model: {
-                          value: _vm.field.IdAuditPlan,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "IdAuditPlan", $$v)
-                          },
-                          expression: "field.IdAuditPlan",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.Organizer
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.Organizer[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Audit Date"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("datepicker", {
-                        staticClass: "mb-1 audit-report-date",
-                        attrs: {
-                          format: _vm.formatDate,
-                          state: _vm.allErrors.AuditorDate ? false : null,
-                          bootstrapStyling: true,
-                          "disabled-dates": _vm.disabledDate,
-                        },
-                        model: {
-                          value: _vm.field.AuditorDate,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "AuditorDate", $$v)
-                          },
-                          expression: "field.AuditorDate",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Ref.Number"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-input", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          name: "IDAudit",
-                          state: _vm.allErrors.IDAudit ? false : null,
-                          readonly: "",
-                        },
-                        model: {
-                          value: _vm.field.IDAudit,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "IDAudit", $$v)
-                          },
-                          expression: "field.IDAudit",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.IDAudit
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.IDAudit[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Lead Auditor"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-input", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          name: "LeadAuditor",
-                          state: _vm.allErrors.LeadAuditor ? false : null,
-                          readonly: "",
-                        },
-                        model: {
-                          value: _vm.field.LeadAuditor,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "LeadAuditor", $$v)
-                          },
-                          expression: "field.LeadAuditor",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.LeadAuditor
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.LeadAuditor[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Auditor"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-input", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          name: "Auditor",
-                          state: _vm.allErrors.Auditor ? false : null,
-                          readonly: "",
-                        },
-                        model: {
-                          value: _vm.field.Auditor,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Auditor", $$v)
-                          },
-                          expression: "field.Auditor",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.Organizer
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.Organizer[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Auditee"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-input", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          name: "Auditee",
-                          state: _vm.allErrors.Auditee ? false : null,
-                          readonly: "",
-                        },
-                        model: {
-                          value: _vm.field.Auditee,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Auditee", $$v)
-                          },
-                          expression: "field.Auditee",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.Organizer
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.Organizer[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-card",
-                {
-                  staticClass: "mb-4",
-                  scopedSlots: _vm._u([
-                    {
-                      key: "header",
-                      fn: function () {
-                        return [_c("h4", [_vm._v("Standart Audit")])]
-                      },
-                      proxy: true,
-                    },
-                  ]),
-                },
-                [
-                  _vm._v(" "),
-                  _vm._l(_vm.field.AuditClause, function (item, index) {
-                    return _c(
-                      "b-form-row",
-                      { key: index },
-                      [
-                        _c(
-                          "b-form-group",
-                          { staticClass: "col-md-6" },
-                          [
-                            index == 0
-                              ? _c("label", [_vm._v("Standart ")])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("b-input", {
-                              staticClass: "mb-1",
-                              attrs: {
-                                name: "StandartAudit",
-                                state: _vm.allErrors.StandartAudit
-                                  ? false
-                                  : null,
-                                readonly: "",
-                              },
-                              model: {
-                                value: item.StandartAudit,
-                                callback: function ($$v) {
-                                  _vm.$set(item, "StandartAudit", $$v)
-                                },
-                                expression: "item.StandartAudit",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _vm.allErrors.StandartAudit
-                              ? _c("span", { staticClass: "text-danger" }, [
-                                  _vm._v(
-                                    _vm._s(_vm.allErrors.StandartAudit[0])
-                                  ),
-                                ])
-                              : _vm._e(),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          { staticClass: "col-md-6" },
-                          [
-                            index == 0
-                              ? _c("label", [_vm._v("Clause")])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("b-input", {
-                              staticClass: "mb-1",
-                              attrs: {
-                                name: "Clause",
-                                state: _vm.allErrors.Clause ? false : null,
-                                readonly: "",
-                              },
-                              model: {
-                                value: item.Clause,
-                                callback: function ($$v) {
-                                  _vm.$set(item, "Clause", $$v)
-                                },
-                                expression: "item.Clause",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _vm.allErrors.Clause
-                              ? _c("span", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.allErrors.Clause[0])),
-                                ])
-                              : _vm._e(),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    )
-                  }),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-3" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Observer"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-input", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          name: "Observer",
-                          state: _vm.allErrors.Observer ? false : null,
-                          readonly: "",
-                        },
-                        model: {
-                          value: _vm.field.Observer,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Observer", $$v)
-                          },
-                          expression: "field.Observer",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.Organizer
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.Organizer[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6" },
-                    [
-                      _c("label", [_vm._v("Kriteria Temuan")]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          options: _vm.opsClauseAudit,
-                          "allow-empty": true,
-                          "show-labels": false,
-                          multiple: true,
-                          placeholder: "Pilih Kriteria Temuan",
-                          label: "Requirements",
-                          "track-by": "Requirements",
-                        },
-                        model: {
-                          value: _vm.field.CriteriaFound,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "CriteriaFound", $$v)
-                          },
-                          expression: "field.CriteriaFound",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.CriteriaFound
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.CriteriaFound[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-3" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Type of Non Conformity"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          options: _vm.opsType,
-                          "allow-empty": false,
-                          "show-labels": false,
-                          "preselect-first": true,
-                          placeholder: "Pilih Type Non Conformity",
-                          label: "text",
-                          "track-by": "text",
-                        },
-                        model: {
-                          value: _vm.field.TypeNonConformity,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "TypeNonConformity", $$v)
-                          },
-                          expression: "field.TypeNonConformity",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.TypeNonConformity
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.TypeNonConformity[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Potential Non Comformity"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-form-textarea", {
-                        attrs: {
-                          name: "PotentialNonConformitiy",
-                          rows: "3",
-                          "no-resize": "",
-                        },
-                        model: {
-                          value: _vm.field.PotentialNonConformitiy,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "PotentialNonConformitiy", $$v)
-                          },
-                          expression: "field.PotentialNonConformitiy",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6" },
-                    [
-                      _c("label", [_vm._v("Attachment")]),
-                      _vm._v(" "),
-                      _c("file-pond", {
-                        ref: "pondMyFile",
-                        attrs: {
-                          name: "File",
-                          "label-idle": "Klik Untuk Menambahkan Attachment",
-                          "allow-multiple": true,
-                          files: _vm.field.File,
-                          required: "",
-                        },
-                        on: {
-                          updatefiles: _vm.handleFile,
-                          removefile: _vm.handleRemove,
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.textBtnSubmit == "Update"
-                        ? _c(
-                            "b-btn",
-                            {
-                              staticClass: "float-right",
-                              attrs: { type: "button", variant: "secondary" },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.priviewFile()
-                                },
-                              },
-                            },
-                            [_vm._v("Preview File")]
-                          )
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c("b-form-group", { staticClass: "col-md-6" }),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6", attrs: { label: "" } },
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "float-right ml-2",
-                          attrs: { type: "submit", variant: "primary" },
-                        },
-                        [_vm._v(_vm._s(_vm.textBtnSubmit))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "float-right",
-                          attrs: { type: "button", variant: "secondary" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.backIndex()
-                            },
-                          },
-                        },
-                        [_vm._v("Back")]
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ]
-      ),
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_1f2221d2_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&id=1f2221d2&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/auditor-report/form.vue?vue&type=style&index=0&id=1f2221d2&lang=css&");
 
 
 /***/ }),
