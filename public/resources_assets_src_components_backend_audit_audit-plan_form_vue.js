@@ -1,9 +1,9 @@
 (self["webpackChunkaudit_widatra"] = self["webpackChunkaudit_widatra"] || []).push([["resources_assets_src_components_backend_audit_audit-plan_form_vue"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14,285 +14,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_text_mask__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_text_mask__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var text_mask_addons_dist_textMaskAddons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! text-mask-addons/dist/textMaskAddons */ "./node_modules/text-mask-addons/dist/textMaskAddons.js");
 /* harmony import */ var text_mask_addons_dist_textMaskAddons__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(text_mask_addons_dist_textMaskAddons__WEBPACK_IMPORTED_MODULE_2__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -365,12 +86,10 @@ __webpack_require__.r(__webpack_exports__);
       formData.append("AuditCriteria", JSON.stringify(this.field.AuditCriteria));
       formData.append("Objective", this.field.Objective);
       formData.append("AuditeeDepartment", JSON.stringify(this.field.AuditeeDepartment));
-
       for (var i = 0; i < this.field.File.length; i++) {
         var file = this.field.File[i];
         formData.append('FileAttachment[' + i + ']', file);
       }
-
       formData.append("OldFileAttachment", JSON.stringify(this.oldFileAttachment));
       var config = {
         headers: {
@@ -379,7 +98,6 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post(this.urlSubmit, formData, config).then(function (res) {
         var resp = res.data;
-
         if (resp.status) {
           this.$router.push({
             name: 'audit/data-audit-plan',
@@ -412,10 +130,8 @@ __webpack_require__.r(__webpack_exports__);
         this.DepSelected = resp.data.DepSelect;
         this.DisabledDep = resp.data.DepDisabled;
         this.field.File = [];
-
         if (this.field.Path != '') {
           var countPath = this.field.Path.length;
-
           for (var i = 0; i < countPath; i++) {
             this.oldFileAttachment.push(this.field.Path[i]);
             this.field.File.push("/" + this.field.Path[i]);
@@ -423,9 +139,7 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           this.oldFileAttachment = '';
         }
-
         this.getCriteriaAudit(this.field.IdOrganizer, true);
-
         for (var a = 0; a < this.field.AuditeeDepartment.length; a++) {
           this.getPosition(this.field.AuditeeDepartment[a].Department.Id, true, a);
         }
@@ -444,28 +158,25 @@ __webpack_require__.r(__webpack_exports__);
       // example of instance method call on pond reference
       this.field.File = files.map(function (files) {
         return files.file;
-      }); // console.log( this.field.myFile )
+      });
+      // console.log( this.field.myFile )
     },
     getSelect: function getSelect(IdEmploye) {
       axios.post('/AdminVue/audit-plan-getSelect', {
         IdEmploye: IdEmploye
       }).then(function (res) {
         var _this = this;
-
         this.opsOrganizer = res.data.organizer;
         this.opsDepartment = res.data.departement;
         this.field.TotalAuditPlant = res.data.countAuditPlan + 1;
         this.opsEmployee = res.data.employee;
-
         if (this.field.Id) {
           var _loop = function _loop(index) {
             var IndexDep = _this.opsDepartment.findIndex(function (IdDep) {
               return IdDep.Id === _this.DepSelected[index];
             });
-
             _this.opsDepartment[IndexDep].$isDisabled = true;
           };
-
           for (var index = 0; index < this.DepSelected.length; index++) {
             _loop(index);
           }
@@ -483,7 +194,6 @@ __webpack_require__.r(__webpack_exports__);
         IdDepartment: Id
       }).then(function (res) {
         this.field.AuditeeDepartment[index].opsPosition = res.data.position;
-
         if (statusEdit == false) {
           this.field.AuditeeDepartment[index].Position = '';
           this.field.AuditeeDepartment[index].Email = '';
@@ -498,7 +208,6 @@ __webpack_require__.r(__webpack_exports__);
         IdOrganizer: Id
       }).then(function (res) {
         this.opsAuditCriteria = res.data.criteria;
-
         if (statusEdit == false) {
           this.field.AuditCriteria = '';
         }
@@ -513,12 +222,10 @@ __webpack_require__.r(__webpack_exports__);
         var YearDate = moment__WEBPACK_IMPORTED_MODULE_0___default()(this.field.AuditPeriode).format('YYYY');
         this.field.IdAudit = YearDate + '/' + option.Name + '/' + StringAngka;
       }
-
       this.getCriteriaAudit(option.Id, false);
     },
     dateSelected: function dateSelected() {
       var _this2 = this;
-
       this.$nextTick(function () {
         return _this2.getIdAuditDate(_this2.field.AuditPeriode);
       });
@@ -546,7 +253,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     getEmailEvent: function getEmailEvent(option, index) {
       var Email = this.field.AuditeeDepartment[index].Email;
-
       if (Email != '') {
         this.field.AuditeeDepartment[index].Email = Email.concat(', ', option.Email);
       } else {
@@ -579,7 +285,6 @@ __webpack_require__.r(__webpack_exports__);
         return IdDep.Id === Id;
       });
       var Disabled = this.DisabledDep[index];
-
       if (Disabled === undefined) {
         this.opsDepartment[IndexDep].$isDisabled = true;
         this.DisabledDep.push(Id);
@@ -591,7 +296,6 @@ __webpack_require__.r(__webpack_exports__);
         this.opsDepartment[IndexDis].$isDisabled = false;
         this.DisabledDep.splice(index, 1);
         this.DisabledDep.splice(index, 0, Id);
-
         if (isDelete) {
           this.DepSelected.splice(index, 1);
         }
@@ -601,7 +305,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     if (this.$route.params.isFormEdit) {
       var Id = this.$route.params.Id;
-
       if (Id) {
         this.getData(Id);
         this.field.Id = Id;
@@ -611,17 +314,535 @@ __webpack_require__.r(__webpack_exports__);
         this.textBtnSubmit = 'Update';
       }
     }
-
     this.getSelect();
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: function() { return /* binding */ render; },
+/* harmony export */   staticRenderFns: function() { return /* binding */ staticRenderFns; }
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("b-card", {
+    staticClass: "mb-4",
+    attrs: {
+      header: _vm.headerCard,
+      "header-tag": "h4"
+    }
+  }, [_vm.isNotif ? _c("div", {
+    staticClass: "alert alert-dismissible fade show",
+    "class": [_vm.alertVariant]
+  }, [_c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "alert"
+    },
+    on: {
+      click: function click($event) {
+        _vm.isNotif = !_vm.isNotif;
+      }
+    }
+  }, [_vm._v("×")]), _vm._v("\n      " + _vm._s(_vm.alertNotif) + "\n    ")]) : _vm._e(), _vm._v(" "), _c("form", {
+    attrs: {
+      method: "POST"
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.submitForm();
+      }
+    }
+  }, [_c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Organizer Audit")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsOrganizer,
+      "allow-empty": false,
+      "show-labels": false,
+      placeholder: "Pilih Organizer",
+      label: "Name",
+      "track-by": "Name"
+    },
+    on: {
+      select: _vm.getIdAudit
+    },
+    model: {
+      value: _vm.field.Organizer,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Organizer", $$v);
+      },
+      expression: "field.Organizer"
+    }
+  }), _vm._v(" "), _vm.allErrors.Organizer ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Organizer[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Audit Periode")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDate,
+      state: _vm.allErrors.AuditPeriode ? false : null,
+      bootstrapStyling: true,
+      "minimum-view": "month",
+      required: ""
+    },
+    on: {
+      selected: function selected($event) {
+        return _vm.dateSelected();
+      }
+    },
+    model: {
+      value: _vm.field.AuditPeriode,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditPeriode", $$v);
+      },
+      expression: "field.AuditPeriode"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("ID Audit")]), _vm._v(" "), _c("b-input", {
+    staticClass: "mb-1",
+    attrs: {
+      name: "IdAudit",
+      state: _vm.allErrors.IdAudit ? false : null,
+      readonly: ""
+    },
+    model: {
+      value: _vm.field.IdAudit,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "IdAudit", $$v);
+      },
+      expression: "field.IdAudit"
+    }
+  }), _vm._v(" "), _vm.allErrors.IdAudit ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.IdAudit[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-3"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Opening Meeting")]), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-8"
+  }, [_c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDatedmy,
+      state: _vm.allErrors.OpeningMeeting ? false : null,
+      bootstrapStyling: true,
+      required: ""
+    },
+    model: {
+      value: _vm.field.OpeningMeeting,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "OpeningMeeting", $$v);
+      },
+      expression: "field.OpeningMeeting"
+    }
+  }), _vm._v(" "), _vm.allErrors.DateOpen ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.DateOpen[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("masked-input", {
+    staticClass: "form-control mb-1",
+    attrs: {
+      type: "text",
+      placeholder: "00:00",
+      state: _vm.allErrors.OpeningMeetingTime ? false : null,
+      mask: _vm.timeMask
+    },
+    model: {
+      value: _vm.field.OpeningMeetingTime,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "OpeningMeetingTime", $$v);
+      },
+      expression: "field.OpeningMeetingTime"
+    }
+  }), _vm._v(" "), _vm.allErrors.OpeningMeetingTime ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.OpeningMeetingTime[0]))]) : _vm._e()], 1)], 1)], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-3"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Audit Execution")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDatedmy,
+      state: _vm.allErrors.AuditExecutionStart ? false : null,
+      bootstrapStyling: true,
+      required: ""
+    },
+    model: {
+      value: _vm.field.AuditExecutionStart,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditExecutionStart", $$v);
+      },
+      expression: "field.AuditExecutionStart"
+    }
+  }), _vm._v(" "), _vm.allErrors.AuditExecutionStart ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.AuditExecutionStart[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-3"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Audit Execution(Done)")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDatedmy,
+      state: _vm.allErrors.AuditExecutionDone ? false : null,
+      bootstrapStyling: true,
+      required: ""
+    },
+    model: {
+      value: _vm.field.AuditExecutionDone,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditExecutionDone", $$v);
+      },
+      expression: "field.AuditExecutionDone"
+    }
+  }), _vm._v(" "), _vm.allErrors.AuditExecutionDone ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.AuditExecutionDone[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-3"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Close Meeting")]), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-8"
+  }, [_c("datepicker", {
+    staticClass: "mb-1",
+    attrs: {
+      format: _vm.formatDatedmy,
+      state: _vm.allErrors.ClosingMeeting ? false : null,
+      bootstrapStyling: true,
+      required: ""
+    },
+    model: {
+      value: _vm.field.ClosingMeeting,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "ClosingMeeting", $$v);
+      },
+      expression: "field.ClosingMeeting"
+    }
+  }), _vm._v(" "), _vm.allErrors.DateClose ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.DateClose[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("masked-input", {
+    staticClass: "form-control mb-1",
+    attrs: {
+      type: "text",
+      placeholder: "00:00",
+      state: _vm.allErrors.CloseMeetingTime ? false : null,
+      mask: _vm.timeMask
+    },
+    model: {
+      value: _vm.field.CloseMeetingTime,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "CloseMeetingTime", $$v);
+      },
+      expression: "field.CloseMeetingTime"
+    }
+  }), _vm._v(" "), _vm.allErrors.CloseMeetingTime ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.CloseMeetingTime[0]))]) : _vm._e()], 1)], 1)], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Approval")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsEmployee,
+      "allow-empty": false,
+      "show-labels": false,
+      multiple: true,
+      placeholder: "Pilih Approval Employee",
+      label: "Name",
+      "track-by": "Name"
+    },
+    model: {
+      value: _vm.field.Approved,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Approved", $$v);
+      },
+      expression: "field.Approved"
+    }
+  }), _vm._v(" "), _vm.allErrors.Approved ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Approved[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Standart Audit")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.opsAuditCriteria,
+      "allow-empty": false,
+      multiple: true,
+      "show-labels": false,
+      placeholder: "Pilih Standart Audit",
+      label: "Standart",
+      "track-by": "Standart"
+    },
+    model: {
+      value: _vm.field.AuditCriteria,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditCriteria", $$v);
+      },
+      expression: "field.AuditCriteria"
+    }
+  }), _vm._v(" "), _vm.allErrors.AuditCriteria ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.AuditCriteria[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-4"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Audit Scope")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "AuditScope",
+      rows: "3",
+      "no-resize": ""
+    },
+    model: {
+      value: _vm.field.AuditScope,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "AuditScope", $$v);
+      },
+      expression: "field.AuditScope"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Purpose")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "Purpose",
+      rows: "3",
+      "no-resize": ""
+    },
+    model: {
+      value: _vm.field.Purpose,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Purpose", $$v);
+      },
+      expression: "field.Purpose"
+    }
+  })], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label"
+  }, [_vm._v("Objective")]), _vm._v(" "), _c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("b-form-textarea", {
+    attrs: {
+      name: "Objective",
+      rows: "3",
+      "no-resize": ""
+    },
+    model: {
+      value: _vm.field.Objective,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Objective", $$v);
+      },
+      expression: "field.Objective"
+    }
+  })], 1)], 1), _vm._v(" "), _c("b-card", {
+    staticClass: "mb-4",
+    scopedSlots: _vm._u([{
+      key: "header",
+      fn: function fn() {
+        return [_c("h4", [_vm._v("Department Auditee")])];
+      },
+      proxy: true
+    }])
+  }, [_vm._v(" "), _vm._l(_vm.field.AuditeeDepartment, function (item, index) {
+    return _c("b-form-row", {
+      key: index
+    }, [_c("b-form-group", {
+      staticClass: "col-md-4"
+    }, [index == 0 ? _c("label", [_vm._v("Area Auditee")]) : _vm._e(), _vm._v(" "), _c("multiselect", {
+      attrs: {
+        options: _vm.opsDepartment,
+        "allow-empty": false,
+        "show-labels": false,
+        placeholder: "Pilih Department Auditee",
+        label: "Department",
+        "track-by": "Department"
+      },
+      on: {
+        select: function select($event) {
+          return _vm.getPositionSelect($event, index);
+        }
+      },
+      model: {
+        value: item.Department,
+        callback: function callback($$v) {
+          _vm.$set(item, "Department", $$v);
+        },
+        expression: "item.Department"
+      }
+    })], 1), _vm._v(" "), _c("b-form-group", {
+      staticClass: "col-md-4"
+    }, [index == 0 ? _c("label", [_vm._v("Key Area Auditee")]) : _vm._e(), _vm._v(" "), _c("multiselect", {
+      attrs: {
+        options: item.opsPosition,
+        "allow-empty": false,
+        "show-labels": false,
+        multiple: true,
+        placeholder: "Pilih Position Auditee",
+        label: "Name",
+        "track-by": "Name"
+      },
+      on: {
+        select: function select($event) {
+          return _vm.getEmailEvent($event, index);
+        },
+        remove: function remove($event) {
+          return _vm.removeEmailEvent($event, index);
+        }
+      },
+      model: {
+        value: item.Position,
+        callback: function callback($$v) {
+          _vm.$set(item, "Position", $$v);
+        },
+        expression: "item.Position"
+      }
+    })], 1), _vm._v(" "), _c("b-form-group", {
+      staticClass: "col-md-3 col-10"
+    }, [index == 0 ? _c("label", [_vm._v("Emails")]) : _vm._e(), _vm._v(" "), _c("b-form-textarea", {
+      attrs: {
+        name: "Email",
+        rows: "3",
+        "background-color": "btn-danger",
+        "no-resize": ""
+      },
+      model: {
+        value: item.Email,
+        callback: function callback($$v) {
+          _vm.$set(item, "Email", $$v);
+        },
+        expression: "item.Email"
+      }
+    })], 1), _vm._v(" "), _c("b-form-group", {
+      staticClass: "col-md-1 col-2 text-center"
+    }, [index == 0 ? _c("label", [_vm._v("Action")]) : _vm._e(), _vm._v(" "), index > 0 ? _c("b-button", {
+      staticClass: "btn btn-sm btn-icon btn-danger text-white",
+      attrs: {
+        pill: true
+      },
+      on: {
+        click: function click($event) {
+          return _vm.removeDepartmentAuditee(index);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "ion ion-md-trash"
+    })]) : _vm._e()], 1)], 1);
+  }), _vm._v(" "), _c("b-btn", {
+    staticClass: "float-left btn-info",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.addDepartmentAuditee();
+      }
+    }
+  }, [_c("i", {
+    staticClass: "fas fa-plus"
+  }), _vm._v(" Tambah")])], 2), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-12"
+  }, [_c("label", [_vm._v("Attachment")]), _vm._v(" "), _c("file-pond", {
+    ref: "pondMyFile",
+    attrs: {
+      name: "File",
+      "label-idle": "Klik Untuk Menambahkan Attachment",
+      "allow-multiple": true,
+      files: _vm.field.File,
+      required: ""
+    },
+    on: {
+      updatefiles: _vm.handleFile,
+      removefile: _vm.handleRemove
+    }
+  }), _vm._v(" "), _vm.textBtnSubmit == "Update" ? _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.priviewFile();
+      }
+    }
+  }, [_vm._v("Preview File")]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6",
+    attrs: {
+      label: ""
+    }
+  }, [_c("b-btn", {
+    staticClass: "float-right ml-2",
+    attrs: {
+      type: "submit",
+      variant: "primary"
+    }
+  }, [_vm._v(_vm._s(_vm.textBtnSubmit))]), _vm._v(" "), _c("b-btn", {
+    staticClass: "float-right",
+    attrs: {
+      type: "button",
+      variant: "secondary"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.backIndex();
+      }
+    }
+  }, [_vm._v("Back")])], 1)], 1)], 1)])], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -639,17 +860,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\ninput:disabled {\n    background-col
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_84fb6ac2_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css&");
 
             
 
@@ -658,11 +879,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_84fb6ac2_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_84fb6ac2_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -686,7 +907,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.vue?vue&type=template&id=84fb6ac2& */ "./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2&");
 /* harmony import */ var _form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form.vue?vue&type=script&lang=js& */ "./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js&");
-/* harmony import */ var _form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&lang=css& */ "./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _form_vue_vue_type_style_index_0_id_84fb6ac2_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css& */ "./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -722,21 +943,8 @@ component.options.__file = "resources/assets/src/components/backend/audit/audit-
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js&");
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css&":
-/*!************************************************************************************************************!*\
-  !*** ./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css& ***!
-  \************************************************************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&lang=css&");
-
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=script&lang=js&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -749,917 +957,23 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=84fb6ac2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_template_id_84fb6ac2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=template&id=84fb6ac2& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2&");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2&":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=template&id=84fb6ac2& ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/***/ "./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css& ***!
+  \************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* binding */ render; },
-/* harmony export */   "staticRenderFns": function() { return /* binding */ staticRenderFns; }
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-card",
-        {
-          staticClass: "mb-4",
-          attrs: { header: _vm.headerCard, "header-tag": "h4" },
-        },
-        [
-          _vm.isNotif
-            ? _c(
-                "div",
-                {
-                  staticClass: "alert alert-dismissible fade show",
-                  class: [_vm.alertVariant],
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "close",
-                      attrs: { type: "button", "data-dismiss": "alert" },
-                      on: {
-                        click: function ($event) {
-                          _vm.isNotif = !_vm.isNotif
-                        },
-                      },
-                    },
-                    [_vm._v("×")]
-                  ),
-                  _vm._v("\n      " + _vm._s(_vm.alertNotif) + "\n    "),
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              attrs: { method: "POST" },
-              on: {
-                submit: function ($event) {
-                  $event.preventDefault()
-                  return _vm.submitForm()
-                },
-              },
-            },
-            [
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Organizer Audit"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          options: _vm.opsOrganizer,
-                          "allow-empty": false,
-                          "show-labels": false,
-                          placeholder: "Pilih Organizer",
-                          label: "Name",
-                          "track-by": "Name",
-                        },
-                        on: { select: _vm.getIdAudit },
-                        model: {
-                          value: _vm.field.Organizer,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Organizer", $$v)
-                          },
-                          expression: "field.Organizer",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.Organizer
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.Organizer[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Audit Periode"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("datepicker", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          format: _vm.formatDate,
-                          state: _vm.allErrors.AuditPeriode ? false : null,
-                          bootstrapStyling: true,
-                          "minimum-view": "month",
-                          required: "",
-                        },
-                        on: {
-                          selected: function ($event) {
-                            return _vm.dateSelected()
-                          },
-                        },
-                        model: {
-                          value: _vm.field.AuditPeriode,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "AuditPeriode", $$v)
-                          },
-                          expression: "field.AuditPeriode",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("ID Audit"),
-                      ]),
-                      _vm._v(" "),
-                      _c("b-input", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          name: "IdAudit",
-                          state: _vm.allErrors.IdAudit ? false : null,
-                          readonly: "",
-                        },
-                        model: {
-                          value: _vm.field.IdAudit,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "IdAudit", $$v)
-                          },
-                          expression: "field.IdAudit",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.IdAudit
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.IdAudit[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-3" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Opening Meeting"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-row",
-                        [
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-8" },
-                            [
-                              _c("datepicker", {
-                                staticClass: "mb-1",
-                                attrs: {
-                                  format: _vm.formatDatedmy,
-                                  state: _vm.allErrors.OpeningMeeting
-                                    ? false
-                                    : null,
-                                  bootstrapStyling: true,
-                                  required: "",
-                                },
-                                model: {
-                                  value: _vm.field.OpeningMeeting,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.field, "OpeningMeeting", $$v)
-                                  },
-                                  expression: "field.OpeningMeeting",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _vm.allErrors.DateOpen
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.allErrors.DateOpen[0])),
-                                  ])
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-4" },
-                            [
-                              _c("masked-input", {
-                                staticClass: "form-control mb-1",
-                                attrs: {
-                                  type: "text",
-                                  placeholder: "00:00",
-                                  state: _vm.allErrors.OpeningMeetingTime
-                                    ? false
-                                    : null,
-                                  mask: _vm.timeMask,
-                                },
-                                model: {
-                                  value: _vm.field.OpeningMeetingTime,
-                                  callback: function ($$v) {
-                                    _vm.$set(
-                                      _vm.field,
-                                      "OpeningMeetingTime",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "field.OpeningMeetingTime",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _vm.allErrors.OpeningMeetingTime
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.allErrors.OpeningMeetingTime[0]
-                                      )
-                                    ),
-                                  ])
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-3" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Audit Execution"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("datepicker", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          format: _vm.formatDatedmy,
-                          state: _vm.allErrors.AuditExecutionStart
-                            ? false
-                            : null,
-                          bootstrapStyling: true,
-                          required: "",
-                        },
-                        model: {
-                          value: _vm.field.AuditExecutionStart,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "AuditExecutionStart", $$v)
-                          },
-                          expression: "field.AuditExecutionStart",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.AuditExecutionStart
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(
-                              _vm._s(_vm.allErrors.AuditExecutionStart[0])
-                            ),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-3" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Audit Execution(Done)"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("datepicker", {
-                        staticClass: "mb-1",
-                        attrs: {
-                          format: _vm.formatDatedmy,
-                          state: _vm.allErrors.AuditExecutionDone
-                            ? false
-                            : null,
-                          bootstrapStyling: true,
-                          required: "",
-                        },
-                        model: {
-                          value: _vm.field.AuditExecutionDone,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "AuditExecutionDone", $$v)
-                          },
-                          expression: "field.AuditExecutionDone",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.AuditExecutionDone
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.AuditExecutionDone[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-3" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Close Meeting"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "b-form-row",
-                        [
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-8" },
-                            [
-                              _c("datepicker", {
-                                staticClass: "mb-1",
-                                attrs: {
-                                  format: _vm.formatDatedmy,
-                                  state: _vm.allErrors.ClosingMeeting
-                                    ? false
-                                    : null,
-                                  bootstrapStyling: true,
-                                  required: "",
-                                },
-                                model: {
-                                  value: _vm.field.ClosingMeeting,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.field, "ClosingMeeting", $$v)
-                                  },
-                                  expression: "field.ClosingMeeting",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _vm.allErrors.DateClose
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.allErrors.DateClose[0])),
-                                  ])
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-form-group",
-                            { staticClass: "col-md-4" },
-                            [
-                              _c("masked-input", {
-                                staticClass: "form-control mb-1",
-                                attrs: {
-                                  type: "text",
-                                  placeholder: "00:00",
-                                  state: _vm.allErrors.CloseMeetingTime
-                                    ? false
-                                    : null,
-                                  mask: _vm.timeMask,
-                                },
-                                model: {
-                                  value: _vm.field.CloseMeetingTime,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.field, "CloseMeetingTime", $$v)
-                                  },
-                                  expression: "field.CloseMeetingTime",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _vm.allErrors.CloseMeetingTime
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(
-                                      _vm._s(_vm.allErrors.CloseMeetingTime[0])
-                                    ),
-                                  ])
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Approval"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          options: _vm.opsEmployee,
-                          "allow-empty": false,
-                          "show-labels": false,
-                          multiple: true,
-                          placeholder: "Pilih Approval Employee",
-                          label: "Name",
-                          "track-by": "Name",
-                        },
-                        model: {
-                          value: _vm.field.Approved,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Approved", $$v)
-                          },
-                          expression: "field.Approved",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.Approved
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.Approved[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Standart Audit"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          options: _vm.opsAuditCriteria,
-                          "allow-empty": false,
-                          multiple: true,
-                          "show-labels": false,
-                          placeholder: "Pilih Standart Audit",
-                          label: "Standart",
-                          "track-by": "Standart",
-                        },
-                        model: {
-                          value: _vm.field.AuditCriteria,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "AuditCriteria", $$v)
-                          },
-                          expression: "field.AuditCriteria",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.allErrors.AuditCriteria
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.allErrors.AuditCriteria[0])),
-                          ])
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Audit Scope"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("b-form-textarea", {
-                        attrs: {
-                          name: "AuditScope",
-                          rows: "3",
-                          "no-resize": "",
-                        },
-                        model: {
-                          value: _vm.field.AuditScope,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "AuditScope", $$v)
-                          },
-                          expression: "field.AuditScope",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Purpose"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("b-form-textarea", {
-                        attrs: { name: "Purpose", rows: "3", "no-resize": "" },
-                        model: {
-                          value: _vm.field.Purpose,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Purpose", $$v)
-                          },
-                          expression: "field.Purpose",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6" },
-                    [
-                      _c("label", { staticClass: "form-label" }, [
-                        _vm._v("Objective"),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "form-label float-right text-danger" },
-                        [_vm._v("*Wajib Diisi")]
-                      ),
-                      _vm._v(" "),
-                      _c("b-form-textarea", {
-                        attrs: {
-                          name: "Objective",
-                          rows: "3",
-                          "no-resize": "",
-                        },
-                        model: {
-                          value: _vm.field.Objective,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.field, "Objective", $$v)
-                          },
-                          expression: "field.Objective",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-card",
-                {
-                  staticClass: "mb-4",
-                  scopedSlots: _vm._u([
-                    {
-                      key: "header",
-                      fn: function () {
-                        return [_c("h4", [_vm._v("Department Auditee")])]
-                      },
-                      proxy: true,
-                    },
-                  ]),
-                },
-                [
-                  _vm._v(" "),
-                  _vm._l(_vm.field.AuditeeDepartment, function (item, index) {
-                    return _c(
-                      "b-form-row",
-                      { key: index },
-                      [
-                        _c(
-                          "b-form-group",
-                          { staticClass: "col-md-4" },
-                          [
-                            index == 0
-                              ? _c("label", [_vm._v("Area Auditee")])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("multiselect", {
-                              attrs: {
-                                options: _vm.opsDepartment,
-                                "allow-empty": false,
-                                "show-labels": false,
-                                placeholder: "Pilih Department Auditee",
-                                label: "Department",
-                                "track-by": "Department",
-                              },
-                              on: {
-                                select: function ($event) {
-                                  return _vm.getPositionSelect($event, index)
-                                },
-                              },
-                              model: {
-                                value: item.Department,
-                                callback: function ($$v) {
-                                  _vm.$set(item, "Department", $$v)
-                                },
-                                expression: "item.Department",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          { staticClass: "col-md-4" },
-                          [
-                            index == 0
-                              ? _c("label", [_vm._v("Key Area Auditee")])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("multiselect", {
-                              attrs: {
-                                options: item.opsPosition,
-                                "allow-empty": false,
-                                "show-labels": false,
-                                multiple: true,
-                                placeholder: "Pilih Position Auditee",
-                                label: "Name",
-                                "track-by": "Name",
-                              },
-                              on: {
-                                select: function ($event) {
-                                  return _vm.getEmailEvent($event, index)
-                                },
-                                remove: function ($event) {
-                                  return _vm.removeEmailEvent($event, index)
-                                },
-                              },
-                              model: {
-                                value: item.Position,
-                                callback: function ($$v) {
-                                  _vm.$set(item, "Position", $$v)
-                                },
-                                expression: "item.Position",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          { staticClass: "col-md-3 col-10" },
-                          [
-                            index == 0
-                              ? _c("label", [_vm._v("Emails")])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("b-form-textarea", {
-                              attrs: {
-                                name: "Email",
-                                rows: "3",
-                                "background-color": "btn-danger",
-                                "no-resize": "",
-                              },
-                              model: {
-                                value: item.Email,
-                                callback: function ($$v) {
-                                  _vm.$set(item, "Email", $$v)
-                                },
-                                expression: "item.Email",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          { staticClass: "col-md-1 col-2 text-center" },
-                          [
-                            index == 0
-                              ? _c("label", [_vm._v("Action")])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            index > 0
-                              ? _c(
-                                  "b-button",
-                                  {
-                                    staticClass:
-                                      "btn btn-sm btn-icon btn-danger text-white",
-                                    attrs: { pill: true },
-                                    on: {
-                                      click: function ($event) {
-                                        return _vm.removeDepartmentAuditee(
-                                          index
-                                        )
-                                      },
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "ion ion-md-trash" })]
-                                )
-                              : _vm._e(),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    )
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "b-btn",
-                    {
-                      staticClass: "float-left btn-info",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function ($event) {
-                          return _vm.addDepartmentAuditee()
-                        },
-                      },
-                    },
-                    [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Tambah")]
-                  ),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-12" },
-                    [
-                      _c("label", [_vm._v("Attachment")]),
-                      _vm._v(" "),
-                      _c("file-pond", {
-                        ref: "pondMyFile",
-                        attrs: {
-                          name: "File",
-                          "label-idle": "Klik Untuk Menambahkan Attachment",
-                          "allow-multiple": true,
-                          files: _vm.field.File,
-                          required: "",
-                        },
-                        on: {
-                          updatefiles: _vm.handleFile,
-                          removefile: _vm.handleRemove,
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.textBtnSubmit == "Update"
-                        ? _c(
-                            "b-btn",
-                            {
-                              staticClass: "float-right",
-                              attrs: { type: "button", variant: "secondary" },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.priviewFile()
-                                },
-                              },
-                            },
-                            [_vm._v("Preview File")]
-                          )
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-form-row",
-                [
-                  _c("b-form-group", { staticClass: "col-md-6" }),
-                  _vm._v(" "),
-                  _c(
-                    "b-form-group",
-                    { staticClass: "col-md-6", attrs: { label: "" } },
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "float-right ml-2",
-                          attrs: { type: "submit", variant: "primary" },
-                        },
-                        [_vm._v(_vm._s(_vm.textBtnSubmit))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "float-right",
-                          attrs: { type: "button", variant: "secondary" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.backIndex()
-                            },
-                          },
-                        },
-                        [_vm._v("Back")]
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ]
-      ),
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_48_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_48_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_form_vue_vue_type_style_index_0_id_84fb6ac2_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-48.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-48.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/src/components/backend/audit/audit-plan/form.vue?vue&type=style&index=0&id=84fb6ac2&lang=css&");
 
 
 /***/ }),
