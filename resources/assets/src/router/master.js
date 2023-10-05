@@ -235,6 +235,9 @@ export default [{
   },{
     path: 'show-glossary-of-terms',
     name: 'master/show-glossary-of-terms',
-    component: () => import('@/components/backend/master/glossary-of-terms/show')
+    component: () => import('@/components/backend/master/glossary-of-terms/show'),
+    props: (route) => ({
+      Id: route.query.Id,
+    }),
   }]
 }]

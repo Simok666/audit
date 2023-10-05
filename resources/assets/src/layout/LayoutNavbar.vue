@@ -23,13 +23,7 @@
       <hr class="d-lg-none w-100 my-2">
 
       <b-navbar-nav class="align-items-lg-center">
-        <!-- Search -->
-        <!-- <label class="nav-item navbar-text navbar-search-box p-0 active">
-          <i class="ion ion-ios-search navbar-icon align-middle"></i>
-          <span class="navbar-search-input pl-2">
-            <input type="text" class="form-control navbar-text mx-2" placeholder="Search..." style="width:200px">
-          </span>
-        </label> -->
+    
       </b-navbar-nav>
 
       <b-navbar-nav class="align-items-lg-center ml-auto">
@@ -41,26 +35,27 @@
           </template>
 
           <b-form-row>
-            <b-form-group class="col-md-10">
+            <b-form-group class="col-md-10 mt-2">
               <input type="text" class="form-control navbar-text mx-2" v-model="searchvalue" placeholder="Cari">
             </b-form-group>
-            <b-form-group class="col-md-2">
-              <b-btn class="btn btn-outline-secondary btn-sm mr-1 mt-1"
+            <b-form-group class="col-md-2 mt-2">
+              <b-btn class="btn btn-outline-secondary btn-sm ml-2"
                 @click="onAction(searchvalue)">
-                <i class="ion ion-ios-search"></i>
+                <i class="ion ion-ios-search" style="font-size: 28px;"></i>
               </b-btn>
             </b-form-group>
           </b-form-row>
-          <b-list-group flush v-for="(item, index) in glossary" :key="index">
-            <b-list-group-item @click="ShowGlossary(item.Id)" class="media d-flex align-items-center">
-              <div class="media-body line-height-condenced ml-3">
-                <div class="text-dark text-bold">{{item.Terms}}</div>
-                <div class="text-dark text-small mt-1" v-html="item.Description">
+          <div class="scroll-container">
+            <b-list-group flush v-for="(item, index) in glossary" :key="index">
+              <b-list-group-item @click="ShowGlossary(item)" class="media d-flex align-items-center">
+                <div class="media-body line-height-condenced ml-3">
+                  <div class="text-dark text-bold">{{item.Terms}}</div>
+                  <div class="text-dark text-small mt-1" v-html="item.Description">
+                  </div>
                 </div>
-              </div>
-            </b-list-group-item>
-          </b-list-group>
-
+              </b-list-group-item>
+            </b-list-group>
+          </div>
           <router-link to="/RoleAdmin/master/data-glossary-of-terms" class="d-block text-center text-light small p-2 my-1">Lihat Semua Glossary Of Terms</router-link>
         </b-nav-item-dropdown>
 
@@ -129,6 +124,7 @@ export default {
         UserName: 'User Default',
       },
       glossary:[],
+      isShowScrollContainer: false,
       notificationsArr:[],
       searchvalue:''
     }
@@ -157,13 +153,18 @@ export default {
       }
     },
 
-    ShowGlossary(Id){
+    ShowGlossary(item){
       this.$router.push({
           name: 'master/show-glossary-of-terms',
+          query: {
+            Id: item.Id,
+            timeStamp: Date.now()
+          },
           params: {
-            Id: Id,
+            item: item,
+            isHelp: true
           }
-      })
+        })
     },
 
     getGlossary(){

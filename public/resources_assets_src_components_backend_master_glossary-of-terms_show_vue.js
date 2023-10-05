@@ -30,15 +30,47 @@ __webpack_require__.r(__webpack_exports__);
         console.log(e);
       });
     },
+    getDataHelp: function getDataHelp(item) {
+      axios.post('/AdminVue/glossary-of-terms-show', {
+        Id: item.Id
+      }).then(function (res) {
+        var resp = res.data;
+        this.field = resp.data;
+      }.bind(this))["catch"](function (e) {
+        console.log(e);
+      });
+    },
     backIndex: function backIndex() {
       this.$router.push('/RoleAdmin/master/data-glossary-of-terms');
     }
   },
   mounted: function mounted() {
-    if (this.$route.params.Id) {
+    if (this.$route.params.Id && this.$route.params.isHelp === undefined) {
       var Id = this.$route.params.Id;
       if (Id) {
         this.getData(Id);
+      }
+    } else if (this.$route.params.isHelp === true) {
+      var item = this.$route.params.item;
+      var query = this.$route.query.Id;
+      if (item) {
+        this.getDataHelp(item, query);
+      }
+    }
+  },
+  watch: {
+    '$route': function $route(to, from) {
+      if (to.params.Id && to.params.isHelp === undefined) {
+        var Id = to.params.Id;
+        if (Id) {
+          this.getData(Id);
+        }
+      } else if (to.params.isHelp === true) {
+        var item = to.params.item;
+        var query = to.query.Id;
+        if (item) {
+          this.getDataHelp(item);
+        }
       }
     }
   }
