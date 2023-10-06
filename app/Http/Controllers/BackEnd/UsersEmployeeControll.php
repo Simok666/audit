@@ -242,8 +242,12 @@ class UsersEmployeeControll extends Controller
     {
         $item = DB::table('employee as emp')
             ->select(
-                'emp.*','usrd.TypeUser as Type',
-                'usr.UserName','dpt.Department as Department','tyu.Name as TypeUser',
+                'emp.*',
+                'usrd.TypeUser as Type',
+                'usr.UserName',
+                'usr.Password',
+                'dpt.Department as Department',
+                'tyu.Name as TypeUser',
                 'pst.Name as Position'
             )
             ->join('users as usr', 'usr.IdEmployee', '=', 'emp.Id')
@@ -256,9 +260,11 @@ class UsersEmployeeControll extends Controller
             ->first();
 
         if(!empty($item)){
-            foreach ($item as $key => $value) { if($value==null) $item->$key = ''; }
+            foreach ($item as $key => $value) {
+                 if($value==null) $item->$key = ''; 
+            }
             $item->IdDepartment = ['IdDepartment'=>$item->IdDepartment, 'Department'=>$item->Department,'IdPosition'=>$item->IdPosition, 'Position'=>$item->Position];
-            // $item->IdCity = ['Id'=>$item->IdCity, 'City'=>$item->City];
+            $item->Password = Crypt::decrypt($item->Password);
             $item->TypeUser = ['Id'=>$item->Type, 'TypeUser'=>$item->TypeUser];
         }
 

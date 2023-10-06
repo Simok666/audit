@@ -60,51 +60,9 @@
             <span class="text-danger" v-if="allErrors.TypeUser">{{ allErrors.TypeUser[0] }}</span>
           </b-form-group>
 
-          <!-- <b-form-group class="col-md-6">
-            <label class="form-label">Tanggal Lahir</label>
-            <b-form-datepicker  v-model="field.DateBirth" class="mb-1" :date-format-options="datePickerFormat"></b-form-datepicker>
-            <span class="text-danger" v-if="allErrors.DateBirth">{{ allErrors.DateBirth[0] }}</span>
-          </b-form-group> -->
         </b-form-row>
 
         <b-form-row>
-          <!-- <b-form-group class="col-md-6">
-            <label class="form-label">CellPhone</label>
-            <b-input name="CellPhone" :state="allErrors.CellPhone?false:null" v-model="field.CellPhone" class="mb-1" type="number" />
-            <span class="text-danger" v-if="allErrors.CellPhone">{{ allErrors.CellPhone[0] }}</span>
-          </b-form-group>
-
-          <b-form-group class="col-md-6">
-            <label class="form-label">HomePhone</label>
-            <b-input name="HomePhone" :state="allErrors.HomePhone?false:null" v-model="field.HomePhone" class="mb-1" type="number" />
-            <span class="text-danger" v-if="allErrors.HomePhone">{{ allErrors.HomePhone[0] }}</span>
-          </b-form-group> -->
-        </b-form-row>
-
-        <b-form-row>
-          <!-- <b-form-group class="col-md-6">
-            <label class="form-label">Kota / Kab</label>
-            <label class="form-label float-right text-danger">*Wajib Diisi</label>
-            <multiselect
-              v-model="field.IdCity"
-              :options="opsCity"
-              :allow-empty="false"
-              placeholder="Pilih Kota / Kab"
-              label="City"
-              track-by="City" />
-            <span class="text-danger" v-if="allErrors.IdCity">{{ allErrors.IdCity[0] }}</span>
-          </b-form-group> -->
-
-          
-        </b-form-row>
-
-        <b-form-row>
-          <!-- <b-form-group class="col-md-6">
-            <label class="form-label">Alamat</label>
-            <label class="form-label float-right text-danger">*Wajib Diisi</label>
-            <b-input name="Address" :state="allErrors.Address?false:null" v-model="field.Address" class="mb-1" required />
-            <span class="text-danger" v-if="allErrors.Address">{{ allErrors.Address[0] }}</span>
-          </b-form-group> -->
 
           <b-form-group class="col-md-6">
             <label class="form-label">User Name</label>
@@ -116,19 +74,9 @@
           <b-form-group class="col-md-6">
             <label class="form-label">Password</label>
             <label class="form-label float-right text-danger">*Wajib Diisi</label>
-            <b-input name="Password" :state="allErrors.Password?false:null" v-model="field.Password" class="mb-1" type="password" :required="isFormCreate" />
+            <b-input name="Password" :state="allErrors.Password?false:null" v-model="field.Password" class="mb-1" type="password" @input="maskPassword" :required="isFormCreate" />
             <span class="text-danger" v-if="allErrors.Password">{{ allErrors.Password[0] }}</span>
           </b-form-group>
-        </b-form-row>
-
-        <b-form-row>
-          <!-- <b-form-group class="col-md-6">
-            <label class="form-label">Bio</label>
-            <b-textarea name="Bio" :state="allErrors.Bio?false:null" v-model="field.Bio" class="mb-1" />
-            <span class="text-danger" v-if="allErrors.Bio">{{ allErrors.Bio[0] }}</span>
-          </b-form-group> -->
-
-          
         </b-form-row>
 
         <b-form-row>
@@ -171,10 +119,15 @@ export default {
       alertVariant: 'alert-dark-danger',
       opsDepartment: [],
       opsCity: [],
-      opsTypeUser: []
+      opsTypeUser: [],
+      maskedPassword: '',
     }
   },
   methods: {
+    maskPassword() {
+      this.maskedPassword = '*'.repeat(this.field.Password.length);
+    },
+
     submitForm () {
       const formData = new FormData()
       formData.append("Id", this.field.Id)
@@ -183,15 +136,10 @@ export default {
       formData.append("Name", this.field.Name)
       formData.append("NIP", this.field.NIP)
       formData.append("Email", this.field.Email)
-      // formData.append("DateBirth", this.field.DateBirth)
-      // formData.append("CellPhone", this.field.CellPhone)
-      // formData.append("HomePhone", this.field.HomePhone)
-      // if(this.field.IdCity) formData.append("IdCity", this.field.IdCity.Id)
+      
       if(this.field.TypeUser) formData.append("TypeUser", this.field.TypeUser.Id)
       formData.append("UserName", this.field.UserName)
       if(this.field.Password) formData.append("Password", this.field.Password)
-      // formData.append("Address", this.field.Address)
-      // formData.append("Bio", this.field.Bio)
 
       const config = {
           headers: { 'content-type': 'multipart/form-data' }
