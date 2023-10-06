@@ -25,8 +25,17 @@
       <b-navbar-nav class="align-items-lg-center">
     
       </b-navbar-nav>
-
       <b-navbar-nav class="align-items-lg-center ml-auto">
+        <b-form inline class="mb-2 mr-2 row">
+              <div class="col-md-6">
+                <label class="form-label">Audit Periode</label>
+              </div>
+              <div class="col-md-6">
+                  <b-form inline class="">
+                    <b-select  v-model="paramData.search.crt__Year" :options="opsYear" v-on:change="getFilters()" />
+                  </b-form>
+              </div>
+        </b-form>
         <b-nav-item-dropdown no-caret :right="!isRtlMode" class="demo-navbar-notifications mr-lg-3">
           <template slot="button-content">
             <i class="fas fa-question-circle navbar-icon align-middle" style="font-size:150% !important;" @click="getGlossary()"></i>
@@ -107,6 +116,8 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   name: 'app-layout-navbar',
 
@@ -126,7 +137,15 @@ export default {
       glossary:[],
       isShowScrollContainer: false,
       notificationsArr:[],
-      searchvalue:''
+      searchvalue:'',
+      opsYear: [],
+
+      paramData: {
+        search: {
+          crt__Year: moment(new Date()).format('YYYY')
+        },
+      },
+
     }
   },
 
@@ -208,7 +227,15 @@ export default {
       .catch( function (e) {
         console.log(e)
       }.bind(this))
+    },
+
+    generateYear() {
+      var dateNow = moment(new Date()).format('YYYY')
+      for (let i=2015; i<=dateNow; i++) {
+        this.opsYear.push(i)
+      }
     }
+
   },
 
   computed:{
@@ -217,6 +244,7 @@ export default {
 
   created(){
     this.getDataUser()
+    this.generateYear()
   }
 
 }

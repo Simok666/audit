@@ -176,6 +176,7 @@ Route::group(['middleware'=>['adminvue']], function () {
 		Route::post('standart-audit-clause-insert','BackEnd\StandartAuditControll@storeClauseAudit');
 		Route::post('standart-audit-clause-import','BackEnd\StandartAuditControll@import');
 		Route::post('standart-audit-clause-getClauseEdit','BackEnd\StandartAuditControll@getClauseEdit');
+		Route::get('standart-audit-clause-getClauseEditTable/{Id}','BackEnd\StandartAuditControll@getClauseEditTable');
 		Route::post('standart-audit-clause-edit','BackEnd\StandartAuditControll@editClauseAudit');
 		Route::post('standart-audit-clause-update','BackEnd\StandartAuditControll@updateClauseAudit');
 		Route::post('standart-audit-clause-delete','BackEnd\StandartAuditControll@deleteClauseAudit');

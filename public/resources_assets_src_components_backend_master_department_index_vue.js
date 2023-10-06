@@ -461,15 +461,15 @@ __webpack_require__.r(__webpack_exports__);
         titleClass: 'text-center',
         dataClass: 'text-center'
       }, {
-        name: 'Department',
-        sortField: 'dpt.Department',
-        title: 'Department',
-        titleClass: 'text-center',
-        dataClass: 'text-center'
-      }, {
         name: 'Division',
         sortField: 'dvs.Department',
         title: 'Division',
+        titleClass: 'text-center',
+        dataClass: 'text-center'
+      }, {
+        name: 'Department',
+        sortField: 'dpt.Department',
+        title: 'Department',
         titleClass: 'text-center',
         dataClass: 'text-center'
       }, {
@@ -745,23 +745,6 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("th", [_c("b-input", {
     attrs: {
-      placeholder: "Department"
-    },
-    on: {
-      keyup: function keyup($event) {
-        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
-        return _vm.getFilters();
-      }
-    },
-    model: {
-      value: _vm.paramData.search.dpt__Department,
-      callback: function callback($$v) {
-        _vm.$set(_vm.paramData.search, "dpt__Department", $$v);
-      },
-      expression: "paramData.search.dpt__Department"
-    }
-  })], 1), _vm._v(" "), _c("th", [_c("b-input", {
-    attrs: {
       placeholder: "Division"
     },
     on: {
@@ -776,6 +759,23 @@ var render = function render() {
         _vm.$set(_vm.paramData.search, "dvs__Department", $$v);
       },
       expression: "paramData.search.dvs__Department"
+    }
+  })], 1), _vm._v(" "), _c("th", [_c("b-input", {
+    attrs: {
+      placeholder: "Department"
+    },
+    on: {
+      keyup: function keyup($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        return _vm.getFilters();
+      }
+    },
+    model: {
+      value: _vm.paramData.search.dpt__Department,
+      callback: function callback($$v) {
+        _vm.$set(_vm.paramData.search, "dpt__Department", $$v);
+      },
+      expression: "paramData.search.dpt__Department"
     }
   })], 1), _vm._v(" "), _c("th", [_c("masked-input", {
     staticClass: "form-control",

@@ -47,10 +47,10 @@
             <b-input v-model="paramData.search.dpt__Code" placeholder="Code" v-on:keyup.enter="getFilters()" />
           </th>
           <th>
-            <b-input v-model="paramData.search.dpt__Department" placeholder="Department" v-on:keyup.enter="getFilters()" />
+            <b-input v-model="paramData.search.dvs__Department" placeholder="Division" v-on:keyup.enter="getFilters()" />
           </th>
           <th>
-            <b-input v-model="paramData.search.dvs__Department" placeholder="Division" v-on:keyup.enter="getFilters()" />
+            <b-input v-model="paramData.search.dpt__Department" placeholder="Department" v-on:keyup.enter="getFilters()" />
           </th>
           <th>
             <masked-input type="text" class="form-control" placeholder="Thn-Bln-Tgl"
@@ -169,16 +169,16 @@ export default {
           dataClass: 'text-center'
         },
         {
-          name: 'Department',
-          sortField: 'dpt.Department',
-          title: 'Department',
+          name: 'Division',
+          sortField: 'dvs.Department',
+          title: 'Division',
           titleClass: 'text-center',
           dataClass: 'text-center'
         },
         {
-          name: 'Division',
-          sortField: 'dvs.Department',
-          title: 'Division',
+          name: 'Department',
+          sortField: 'dpt.Department',
+          title: 'Department',
           titleClass: 'text-center',
           dataClass: 'text-center'
         },

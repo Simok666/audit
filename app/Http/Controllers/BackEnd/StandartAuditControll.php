@@ -107,6 +107,37 @@ class StandartAuditControll extends Controller
         ));
     }
 
+    public function getClauseEditTable(Request $request, $id) {
+        $limit = $request->input('per_page');
+    	$sortRules = $request->input('sort');
+        $searchValue = json_decode($request->input('search'));
+        list($field, $dir) = explode('|', $sortRules);
+        
+        $item = DB::table('clause_audit as ca')
+            ->select(
+                'ca.Id',
+                'ca.Clause',
+                'ca.Requirements',
+                'ca.RequirementsDetail'
+                )
+            ->where('ca.IdStandart',$id)
+            ->where('ca.Actived','>',0)
+            ->orderByRaw('ca.Clause * 1 asc');
+
+            if ($searchValue) {
+                $item->where(function($item) use ($searchValue) {
+                    foreach ($searchValue as $key=>$val) {
+                        $key = str_replace('__', '.', $key);
+                        $item->where($key, 'like', '%'.$val.'%');
+                    }
+                });
+            }
+
+        $data = $item->paginate($limit);
+        
+        return $data;
+    } 
+
     public function getClauseEdit(Request $request){
         $item = DB::table('clause_audit')
             ->select('Id','Clause','Requirements','RequirementsDetail')
