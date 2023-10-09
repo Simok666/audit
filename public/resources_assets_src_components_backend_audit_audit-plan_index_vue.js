@@ -559,8 +559,8 @@ __webpack_require__.r(__webpack_exports__);
         dataClass: 'text-center'
       }],
       sortOrder: [{
-        field: 'Id',
-        sortField: 'adp.Id',
+        field: 'AuditPeriode',
+        sortField: 'adp.AuditPeriode',
         direction: 'desc'
       }],
       vars: {
@@ -569,6 +569,14 @@ __webpack_require__.r(__webpack_exports__);
       paramData: {
         search: {}
       },
+      opsStatus: [{
+        'value': 1,
+        'text': 'Open'
+      }, {
+        'value': 2,
+        'text': 'Closed'
+      }],
+      statusVal: [],
       User: JSON.parse(window.localStorage.getItem('user'))
     };
   },
@@ -581,6 +589,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     formatDateMY: function formatDateMY(value) {
       return value == null ? '' : moment__WEBPACK_IMPORTED_MODULE_5___default()(value).format('MMMM-YYYY');
+    },
+    changeStatus: function changeStatus() {
+      if (this.statusVal) this.paramData.search.adp__Status = this.statusVal.value;else this.paramData.search.adp__Status = null;
+      this.$refs.vuetable.refresh();
     },
     onPaginationData: function onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData);
@@ -1096,13 +1108,30 @@ var render = function render() {
       }
     },
     model: {
-      value: _vm.paramData.search.dst__CloseMeeting,
+      value: _vm.paramData.search.adp__CloseMeeting,
       callback: function callback($$v) {
-        _vm.$set(_vm.paramData.search, "dst__CloseMeeting", $$v);
+        _vm.$set(_vm.paramData.search, "adp__CloseMeeting", $$v);
       },
-      expression: "paramData.search.dst__CloseMeeting"
+      expression: "paramData.search.adp__CloseMeeting"
     }
-  })], 1), _vm._v(" "), _c("th"), _vm._v(" "), _c("th", [_c("b-input", {
+  })], 1), _vm._v(" "), _c("th", [_c("b-input", {
+    attrs: {
+      placeholder: "Standart"
+    },
+    on: {
+      keyup: function keyup($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        return _vm.getFilters();
+      }
+    },
+    model: {
+      value: _vm.paramData.search.sdt__Standart,
+      callback: function callback($$v) {
+        _vm.$set(_vm.paramData.search, "sdt__Standart", $$v);
+      },
+      expression: "paramData.search.sdt__Standart"
+    }
+  })], 1), _vm._v(" "), _c("th", [_c("b-input", {
     attrs: {
       placeholder: "Objective"
     },
@@ -1136,7 +1165,27 @@ var render = function render() {
       },
       expression: "paramData.search.adp__OrganizerAudit"
     }
-  })], 1), _vm._v(" "), _c("th"), _vm._v(" "), _c("th"), _vm._v(" "), _c("th"), _vm._v(" "), _c("th"), _vm._v(" "), _c("th"), _vm._v(" "), _c("th")]), _vm._v(" "), _c("vuetable-row-header")], 1)], 2)], 1), _vm._v(" "), _c("div", {
+  })], 1), _vm._v(" "), _c("th"), _vm._v(" "), _c("th"), _vm._v(" "), _c("th", [_c("multiselect", {
+    attrs: {
+      options: _vm.opsStatus,
+      "allow-empty": true,
+      placeholder: "Pilih Status",
+      label: "text",
+      "track-by": "text"
+    },
+    on: {
+      input: function input($event) {
+        return _vm.changeStatus();
+      }
+    },
+    model: {
+      value: _vm.statusVal,
+      callback: function callback($$v) {
+        _vm.statusVal = $$v;
+      },
+      expression: "statusVal"
+    }
+  })], 1), _vm._v(" "), _c("th"), _vm._v(" "), _c("th"), _vm._v(" "), _c("th")]), _vm._v(" "), _c("vuetable-row-header")], 1)], 2)], 1), _vm._v(" "), _c("div", {
     staticClass: "vuetable-footer"
   }, [_c("vuetable-pagination-info", {
     ref: "paginationInfo"
