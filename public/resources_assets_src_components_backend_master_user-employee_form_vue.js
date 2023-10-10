@@ -21,6 +21,8 @@ __webpack_require__.r(__webpack_exports__);
       textBtnSubmit: 'Create',
       field: {
         // myFile : ''
+        isApproved: 0,
+        Actived: 0
       },
       allErrors: [],
       isNotif: false,
@@ -30,7 +32,9 @@ __webpack_require__.r(__webpack_exports__);
       opsDepartment: [],
       opsCity: [],
       opsTypeUser: [],
-      maskedPassword: ''
+      maskedPassword: '',
+      isCheckedApproval: false,
+      isCheckedActived: false
     };
   },
   methods: {
@@ -48,6 +52,8 @@ __webpack_require__.r(__webpack_exports__);
       if (this.field.TypeUser) formData.append("TypeUser", this.field.TypeUser.Id);
       formData.append("UserName", this.field.UserName);
       if (this.field.Password) formData.append("Password", this.field.Password);
+      formData.append("Approval", this.field.isApproved);
+      formData.append("Actived", this.field.Actived);
       var config = {
         headers: {
           'content-type': 'multipart/form-data'
@@ -84,6 +90,7 @@ __webpack_require__.r(__webpack_exports__);
         Id: Id
       }).then(function (res) {
         var resp = res.data;
+        console.log(resp.data);
         this.field = resp.data;
       }.bind(this))["catch"](function (e) {
         console.log(e);
@@ -351,6 +358,46 @@ var render = function render() {
   }), _vm._v(" "), _vm.allErrors.Password ? _c("span", {
     staticClass: "text-danger"
   }, [_vm._v(_vm._s(_vm.allErrors.Password[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("b-form-checkbox", {
+    attrs: {
+      id: "checkbox-1",
+      name: "checkbox-1",
+      value: "1",
+      "unchecked-value": "0"
+    },
+    model: {
+      value: _vm.field.isApproved,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "isApproved", $$v);
+      },
+      expression: "field.isApproved"
+    }
+  }, [_vm._v("\n            Approved\n          ")]), _vm._v(" "), _vm.allErrors.isApproved ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.isApproved[0]))]) : _vm._e()], 1), _vm._v(" "), _c("b-form-group", {
+    staticClass: "col-md-6"
+  }, [_c("label", {
+    staticClass: "form-label float-right text-danger"
+  }, [_vm._v("*Wajib Diisi")]), _vm._v(" "), _c("b-form-checkbox", {
+    attrs: {
+      id: "checkbox-2",
+      name: "checkbox-2",
+      value: "1",
+      "unchecked-value": "0"
+    },
+    model: {
+      value: _vm.field.Actived,
+      callback: function callback($$v) {
+        _vm.$set(_vm.field, "Actived", $$v);
+      },
+      expression: "field.Actived"
+    }
+  }, [_vm._v("\n            Active User\n          ")]), _vm._v(" "), _vm.allErrors.Actived ? _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(_vm.allErrors.Actived[0]))]) : _vm._e()], 1)], 1), _vm._v(" "), _c("b-form-row", [_c("b-form-group", {
     staticClass: "col-md-6"
   }), _vm._v(" "), _c("b-form-group", {
     staticClass: "col-md-6",
