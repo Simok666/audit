@@ -63,7 +63,6 @@
         </b-form-row>
 
         <b-form-row>
-
           <b-form-group class="col-md-6">
             <label class="form-label">User Name</label>
             <label class="form-label float-right text-danger">*Wajib Diisi</label>
@@ -79,6 +78,36 @@
           </b-form-group>
         </b-form-row>
 
+        <b-form-row>
+          <b-form-group class="col-md-6">
+            <label class="form-label float-right text-danger">*Wajib Diisi</label>
+            <b-form-checkbox
+              id="checkbox-1"
+              v-model="field.isApproved"
+              name="checkbox-1"
+              value="1"
+              unchecked-value="0"
+            >
+              Approved
+            </b-form-checkbox>
+            <span class="text-danger" v-if="allErrors.isApproved">{{ allErrors.isApproved[0] }}</span>
+          </b-form-group>
+          
+          <b-form-group class="col-md-6">
+            <label class="form-label float-right text-danger">*Wajib Diisi</label>
+            <b-form-checkbox
+              id="checkbox-2"
+              v-model="field.Actived"
+              name="checkbox-2"
+              value="1"
+              unchecked-value="0"
+            >
+              Active User
+            </b-form-checkbox>
+            <span class="text-danger" v-if="allErrors.Actived">{{ allErrors.Actived[0] }}</span>
+          </b-form-group>
+        </b-form-row>
+       
         <b-form-row>
           <b-form-group class="col-md-6"></b-form-group>
           <b-form-group label="" class="col-md-6">
@@ -111,6 +140,8 @@ export default {
       textBtnSubmit: 'Create',
       field: {
         // myFile : ''
+        isApproved: 0,
+        Actived: 0
       },
       allErrors: [],
       isNotif: false,
@@ -121,6 +152,9 @@ export default {
       opsCity: [],
       opsTypeUser: [],
       maskedPassword: '',
+      isCheckedApproval: false,
+      isCheckedActived: false
+      
     }
   },
   methods: {
@@ -140,7 +174,8 @@ export default {
       if(this.field.TypeUser) formData.append("TypeUser", this.field.TypeUser.Id)
       formData.append("UserName", this.field.UserName)
       if(this.field.Password) formData.append("Password", this.field.Password)
-
+      formData.append("Approval", this.field.isApproved)
+      formData.append("Actived", this.field.Actived)
       const config = {
           headers: { 'content-type': 'multipart/form-data' }
       }
@@ -183,6 +218,7 @@ export default {
       })
       .then( function (res) {
         var resp = res.data
+        console.log(resp.data)
         this.field = resp.data
       }.bind(this))
       .catch( function (e) {
