@@ -585,10 +585,10 @@ __webpack_require__.r(__webpack_exports__);
       return accounting__WEBPACK_IMPORTED_MODULE_4___default().formatMoney(value, 'Rp ', 2, '.', ',');
     },
     formatDate: function formatDate(value) {
-      return value == null ? '' : moment__WEBPACK_IMPORTED_MODULE_5___default()(value).format('DD/MMMM/YYYY');
+      return value == null ? '' : moment__WEBPACK_IMPORTED_MODULE_5___default()(value).format('DD.MM.YY');
     },
     formatDateMY: function formatDateMY(value) {
-      return value == null ? '' : moment__WEBPACK_IMPORTED_MODULE_5___default()(value).format('MMMM-YYYY');
+      return value == null ? '' : moment__WEBPACK_IMPORTED_MODULE_5___default()(value).format('MM.YY');
     },
     changeStatus: function changeStatus() {
       if (this.statusVal) this.paramData.search.adp__Status = this.statusVal.value;else this.paramData.search.adp__Status = null;

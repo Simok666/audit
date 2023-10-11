@@ -245,7 +245,7 @@
         </thead>
     </table>
 
-    <h3 class="text-center">PERIODE {{\Carbon\Carbon::parse($item[0]->AuditPeriode)->format('F-Y')}}</h3>
+    <h3 class="text-center">PERIODE {{\Carbon\Carbon::parse($item[0]->AuditPeriode)->format('m.y')}}</h3>
 
     <strong>EDISI :</strong>
     <table class="table table-bordered">
@@ -307,11 +307,11 @@
                     <td colspan="3">
                         <u>Target Korektif : </u>
                         <br>
-                        {{\Carbon\Carbon::parse($val->ExecutionPlaneCorrective)->format('d/m/Y')}}
+                        {{\Carbon\Carbon::parse($val->ExecutionPlaneCorrective)->format('d.m.y')}}
                         <br>
                         <u>Target Preventif : </u>
                         <br>
-                        {{\Carbon\Carbon::parse($val->ExecutionPreventiveAction)->format('d/m/Y')}}
+                        {{\Carbon\Carbon::parse($val->ExecutionPreventiveAction)->format('d.m.y')}}
                     </td>
                     <td colspan="3">
                         @if($val->Status == 1)

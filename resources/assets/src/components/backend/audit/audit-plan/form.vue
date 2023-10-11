@@ -38,9 +38,10 @@
                 <label class="form-label float-right text-danger">*Wajib Diisi</label>
                 <datepicker
                 v-model="field.AuditPeriode"
-                :format="formatDate"
+                :format="formatDatedmy"
                 :state="allErrors.AuditPeriode?false:null"
                 :bootstrapStyling="true"
+                :typeable="true"
                 minimum-view="month"
                 @selected="dateSelected()"
                 class="mb-1" required/>
@@ -63,7 +64,10 @@
                         :format="formatDatedmy"
                         :state="allErrors.OpeningMeeting?false:null"
                         :bootstrapStyling="true"
-                        class="mb-1" required/>
+                        :typeable="true"
+                        class="mb-1" 
+                        style="background: #fff !important;"
+                        required/>
                         <span class="text-danger" v-if="allErrors.DateOpen">{{ allErrors.DateOpen[0] }}</span>
                     </b-form-group>
                     <b-form-group class="col-md-4">
@@ -85,6 +89,7 @@
                     :format="formatDatedmy"
                     :state="allErrors.AuditExecutionStart?false:null"
                     :bootstrapStyling="true"
+                    :typeable="true"
                     class="mb-1" required/>
                     <span class="text-danger" v-if="allErrors.AuditExecutionStart">{{ allErrors.AuditExecutionStart[0] }}</span>
             </b-form-group>
@@ -97,6 +102,7 @@
                     :format="formatDatedmy"
                     :state="allErrors.AuditExecutionDone?false:null"
                     :bootstrapStyling="true"
+                    :typeable="true"
                     class="mb-1" required/>
                     <span class="text-danger" v-if="allErrors.AuditExecutionDone">{{ allErrors.AuditExecutionDone[0] }}</span>
             </b-form-group>
@@ -110,6 +116,7 @@
                         :format="formatDatedmy"
                         :state="allErrors.ClosingMeeting?false:null"
                         :bootstrapStyling="true"
+                        :typeable="true"
                         class="mb-1" required/>
                         <span class="text-danger" v-if="allErrors.DateClose">{{ allErrors.DateClose[0] }}</span>
                     </b-form-group>
@@ -276,6 +283,12 @@
 
   </div>
 </template>
+
+<style>
+  .custom-datepicker {
+    background-color: #ffffff; 
+}
+</style>
 
 <script>
 

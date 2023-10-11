@@ -126,11 +126,11 @@
             <td style="width: 30%">
                 <table class="table table-bordered">
                     <tbody>
-                        <thead>
+                        <tbody>
                             <tr>
                                 <th colspan="6" class="text-center" style="background-color: #cacaca">Observer</th>
                             </tr>
-                        </thead>
+                        </tbody>
                         <tbody>
                             @foreach ($item->Observer as $val)
                                 <tr>
