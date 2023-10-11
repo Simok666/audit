@@ -434,11 +434,11 @@ export default {
     },
 
     formatDate: function(value) {
-      return (value == null) ? '' : moment(value).format('DD/MMMM/YYYY')
+      return (value == null) ? '' : moment(value).format('DD.MM.YY')
     },
 
     formatDateMY: function(value){
-      return (value == null) ? '' : moment(value).format('MMMM-YYYY')
+      return (value == null) ? '' : moment(value).format('MM.YY')
     },
 
     changeStatus () {

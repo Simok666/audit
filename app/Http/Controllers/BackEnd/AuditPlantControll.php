@@ -158,6 +158,7 @@ class AuditPlantControll extends Controller
 
         $employee = DB::table('employee')
             ->select('Id','Name','NIP')
+            ->where('isApproved',1)
             ->where('Actived','>',0)
             ->get();
 
@@ -757,7 +758,7 @@ class AuditPlantControll extends Controller
 
         if(!empty($item)){
             $item->KriteriaAudit = '';
-            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('F-Y');
+            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('m.y');
             $AuditSelection = DB::table('audit_selection as ads')
                 ->select('ads.Id','dpt.Department','ads.AuditDate','ads.HourStart','ads.HourDone')
                 ->join('department as dpt','dpt.Id','=','ads.IdDepartmentAuditee')
@@ -802,7 +803,7 @@ class AuditPlantControll extends Controller
                     $val->DetailAudit = $DetailAuditSelection;
                     $val->DetailAuditClause = $DetailAuditClause;
                     $val->LeadAuditor = $DetailAuditSelection->LeadAuditor;
-                    $val->AuditDateHari = Carbon::parse($val->AuditDate)->format('l, d F Y');
+                    $val->AuditDateHari = Carbon::parse($val->AuditDate)->format('l, d.m.y'); // d F Y (format before changes)
                     $val->HourStart = Carbon::parse($val->HourStart)->format('H.II');
                     $val->HourDone = Carbon::parse($val->HourDone)->format('H.II');
                 }
@@ -971,7 +972,7 @@ class AuditPlantControll extends Controller
         if(!empty($item)){
             $item->KriteriaAudit = '';
             $item->PeriodeYear = Carbon::parse($item->AuditPeriode)->format('Y');
-            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('F-Y');
+            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('m.y');
             $item->MonthExcecution = Carbon::parse($item->AuditExecutionStart)->format('m');
             $item->MonthExcecutionDone = Carbon::parse($item->AuditExecutionDone)->format('m');
             $AuditSelection = DB::table('audit_selection as ads')
