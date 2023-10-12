@@ -2,7 +2,7 @@
     <tbody>
         <tr>
             <th width="20%" style="text-align: center; background-color:#cacaca; border: 2px solid #080808;">PERIODE AUDIT</th>
-            <td width="30%" colspan="2" style="text-align: center; border: 2px solid #080808;">{{\Carbon\Carbon::parse($item->AuditPeriode)->format('F-Y')}}</td>
+            <td width="30%" colspan="2" style="text-align: center; border: 2px solid #080808;">{{\Carbon\Carbon::parse($item->AuditPeriode)->format('m.y')}}</td>
             <th width="50%"></th>
         </tr>
         <tr>
@@ -170,7 +170,7 @@
                                 $totalMa++;
                                 $totalAll++;
                                 $totalAllDep++;
-                                $val->ClauseTemuan[$i]++;
+                                (!empty($val->ClauseTemuan)) ? $val->ClauseTemuan[$i]++ : $val->ClauseTemuan;
                                 $val->TotalClauseTemuan++;
                             }elseif($val->TypeNonConformity == 'Minor'){
                                 $ArrMl[$i] = $ArrMl[$i]+1;

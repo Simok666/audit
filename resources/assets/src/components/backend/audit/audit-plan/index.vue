@@ -89,12 +89,14 @@
           </th>
           <th>
             <masked-input type="text" class="form-control" placeholder="Thn-Bln-Tgl"
-              v-model="paramData.search.dst__CloseMeeting"
+              v-model="paramData.search.adp__CloseMeeting"
               v-on:keyup.enter="getFilters()"
               :guide="false"
               :mask="dateYmdMask" />
           </th>
-          <th></th>
+          <th>
+            <b-input v-model="paramData.search.sdt__Standart" placeholder="Standart" v-on:keyup.enter="getFilters()" />
+          </th>
           <th>
             <b-input v-model="paramData.search.adp__Objective" placeholder="Objective" v-on:keyup.enter="getFilters()" />
           </th>
@@ -103,7 +105,16 @@
           </th>
           <th></th>
           <th></th>
-          <th></th>
+          <th>
+            <multiselect
+              v-model="statusVal"
+              :options="opsStatus"
+              :allow-empty="true"
+              placeholder="Pilih Status"
+              label="text"
+              track-by="text"
+              @input="changeStatus()" />
+          </th>
           <th></th>
           <th></th>
           <th></th>
@@ -391,8 +402,8 @@ export default {
 
   		sortOrder: [
         {
-          field: 'Id',
-          sortField: 'adp.Id',
+          field: 'AuditPeriode',
+          sortField: 'adp.AuditPeriode',
           direction: 'desc'
         }
       ],
@@ -405,6 +416,13 @@ export default {
         search: {},
       },
 
+      opsStatus: [
+        {'value':1,'text':'Open'},
+        {'value':2,'text':'Closed'}
+      ],
+
+      statusVal: [],
+
       User : JSON.parse(window.localStorage.getItem('user'))
 
   	}
@@ -416,11 +434,17 @@ export default {
     },
 
     formatDate: function(value) {
-      return (value == null) ? '' : moment(value).format('DD/MMMM/YYYY')
+      return (value == null) ? '' : moment(value).format('DD.MM.YY')
     },
 
     formatDateMY: function(value){
-      return (value == null) ? '' : moment(value).format('MMMM-YYYY')
+      return (value == null) ? '' : moment(value).format('MM.YY')
+    },
+
+    changeStatus () {
+      if(this.statusVal) this.paramData.search.adp__Status = this.statusVal.value
+      else this.paramData.search.adp__Status = null
+      this.$refs.vuetable.refresh()  
     },
 
     onPaginationData (paginationData) {

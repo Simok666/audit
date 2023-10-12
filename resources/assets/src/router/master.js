@@ -233,6 +233,14 @@ export default [{
     name: 'master/form-glossary-of-terms',
     component: () => import('@/components/backend/master/glossary-of-terms/form')
   },{
+    path: 'form-audit-email-template',
+    name: 'master/form-audit-email-template',
+    component: () => import('@/components/backend/master/audit-email/form')
+  },{
+    path: 'data-audit-email-template',
+    name: 'master/data-audit-email-template',
+    component: () => import('@/components/backend/master/audit-email/index')
+  },{
     path: 'show-glossary-of-terms',
     name: 'master/show-glossary-of-terms',
     component: () => import('@/components/backend/master/glossary-of-terms/show'),

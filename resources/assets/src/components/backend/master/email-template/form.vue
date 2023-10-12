@@ -74,8 +74,8 @@
   </div>
 </template>
 
-<style src="simplemde/dist/simplemde.min.css"></style>
-<style src="@/vendor/libs/vue-simplemde/vue-simplemde.scss" lang="scss"></style>
+<!-- <style src="simplemde/dist/simplemde.min.css"></style>
+<style src="@/vendor/libs/vue-simplemde/vue-simplemde.scss" lang="scss"></style> -->
 <style src="@/vendor/libs/vue-quill-editor/typography.scss" lang="scss"></style>
 <style src="@/vendor/libs/vue-quill-editor/editor.scss" lang="scss"></style>
 
@@ -84,32 +84,32 @@
 // Vue Simplemde
 //
 
-const isIE10 = typeof document.documentMode === 'number' && document.documentMode === 10
+// const isIE10 = typeof document.documentMode === 'number' && document.documentMode === 10
 
-/* eslint-disable */
+// /* eslint-disable */
 
-// Dirty hack to prevent fatal error in IE 10
-if (isIE10) {
-  Uint8Array.prototype.foo = function () { return 42 }
-}
+// // Dirty hack to prevent fatal error in IE 10
+// if (isIE10) {
+//   Uint8Array.prototype.foo = function () { return 42 }
+// }
 
-const markdownEditor = require('vue-simplemde/src/index').default
+// const markdownEditor = require('vue-simplemde/src/index').default
 
-if (isIE10) {
-  delete Uint8Array.prototype.foo
-  Uint8Array.prototype.foo = undefined
-}
+// if (isIE10) {
+//   delete Uint8Array.prototype.foo
+//   Uint8Array.prototype.foo = undefined
+// }
 //
 
 import moment from 'moment'
-
+// import 'codemirror/addon/edit/continuelist.js';
 export default {
   name: 'form-email-template',
   metaInfo: {
     title: 'Form Template Email'
   },
   components: {
-    markdownEditor,
+    // markdownEditor,
     quillEditor: () => import('vue-quill-editor/dist/vue-quill-editor').then(m => m.quillEditor).catch(() => {})
   },
   data () {

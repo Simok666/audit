@@ -60,6 +60,7 @@
                         rows="3"
                         no-resize>
                 </b-form-textarea>
+                <!-- <quill-editor v-model="field.Description" :options="editorOptions" /> -->
                 <span class="text-danger" v-if="allErrors.Description">{{ allErrors.Description[0] }}</span>
             </b-form-group>
 
@@ -93,6 +94,10 @@
   </div>
 </template>
 
+<style src="@/vendor/libs/vue-quill-editor/typography.scss" lang="scss"></style>
+<style src="@/vendor/libs/vue-quill-editor/editor.scss" lang="scss"></style>
+
+
 <script>
 
 import moment from 'moment'
@@ -104,7 +109,7 @@ export default {
     title: 'Form Standart Audit'
   },
   components: {
-
+    quillEditor: () => import('vue-quill-editor/dist/vue-quill-editor').then(m => m.quillEditor).catch(() => {})
   },
   data () {
     return {
@@ -122,7 +127,17 @@ export default {
       isNotif: false,
       isFormEdit:false,
       alertNotif: '',
-      alertVariant: 'alert-dark-danger'
+      alertVariant: 'alert-dark-danger',
+      editorOptions: {
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, 3, 4, 5, 6, false] }, { font: [] }, { size: [] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ align: [] }],
+            ['link', 'video']
+          ]
+        }
+      }
     }
   },
   methods: {

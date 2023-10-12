@@ -48,8 +48,8 @@ class UsersEmployeeControll extends Controller
             ->leftJoin('type_user as tyu','tyu.Id','=','usrd.TypeUser')
             ->leftjoin('department as dpt','dpt.Id','=','emp.IdDepartment')
             ->orderBy($field, $dir)
-            ->where('usrd.Apps','Audit')
-            ->where('emp.Actived','>',0);
+            ->where('usrd.Apps','Audit');
+            // ->where('emp.Actived','>',0);
 
         if ($searchValue) {
             $query->where(function($query) use ($searchValue) {
@@ -193,14 +193,11 @@ class UsersEmployeeControll extends Controller
                     'IdPosition'=>$request->input('IdPosition'),
                     'Name'=>$request->input('Name'),
                     'NIP'=>$request->input('NIP'),
-                    // 'DateBirth'=>$request->input('DateBirth'),
-                    // 'CellPhone'=>$request->input('CellPhone'),
-                    // 'HomePhone'=>$request->input('HomePhone'),
                     'IdCity'=>223,
                     'Email'=>$request->input('Email'),
-                    // 'Address'=>$request->input('Address'),
-                    // 'Bio'=>$request->input('Bio'),
-                    'UserEntry'=>session('adminvue')->Id
+                    'UserEntry'=>session('adminvue')->Id,
+                    'isApproved' => $request->input('Approval'),
+                    'Actived' =>  $request->input('Actived')
                 ]);
 
             $IdUser = DB::table('users')
@@ -242,8 +239,12 @@ class UsersEmployeeControll extends Controller
     {
         $item = DB::table('employee as emp')
             ->select(
-                'emp.*','usrd.TypeUser as Type',
-                'usr.UserName','dpt.Department as Department','tyu.Name as TypeUser',
+                'emp.*',
+                'usrd.TypeUser as Type',
+                'usr.UserName',
+                'usr.Password',
+                'dpt.Department as Department',
+                'tyu.Name as TypeUser',
                 'pst.Name as Position'
             )
             ->join('users as usr', 'usr.IdEmployee', '=', 'emp.Id')
@@ -251,14 +252,16 @@ class UsersEmployeeControll extends Controller
             ->join('position as pst','pst.Id','=','emp.IdPosition')
             ->leftjoin('users_detail as usrd','usrd.IdUsers','=','usr.Id')
             ->join('type_user as tyu','tyu.Id','=','usrd.TypeUser')
-            ->where('emp.Actived',1)
+            // ->where('emp.Actived',1)
             ->where('emp.Id',$request->input('Id'))
             ->first();
 
         if(!empty($item)){
-            foreach ($item as $key => $value) { if($value==null) $item->$key = ''; }
+            foreach ($item as $key => $value) {
+                 if($value==null) $item->$key = ''; 
+            }
             $item->IdDepartment = ['IdDepartment'=>$item->IdDepartment, 'Department'=>$item->Department,'IdPosition'=>$item->IdPosition, 'Position'=>$item->Position];
-            // $item->IdCity = ['Id'=>$item->IdCity, 'City'=>$item->City];
+            $item->Password = Crypt::decrypt($item->Password);
             $item->TypeUser = ['Id'=>$item->Type, 'TypeUser'=>$item->TypeUser];
         }
 
@@ -290,7 +293,7 @@ class UsersEmployeeControll extends Controller
                 'usr.Id as IdUser'
             )
             ->join('users as usr', 'usr.IdEmployee', '=', 'emp.Id')
-            ->where('emp.Actived',1)
+            // ->where('emp.Actived',1)
             ->where('emp.Id',$request->input('Id'))
             ->first();
 
@@ -336,13 +339,9 @@ class UsersEmployeeControll extends Controller
                     'IdPosition'=>$request->input('IdPosition'),
                     'Name'=>$request->input('Name'),
                     'NIP'=>$request->input('NIP'),
-                    'Email'=>$request->input('Email')
-                    // 'DateBirth'=>$request->input('DateBirth'),
-                    // 'CellPhone'=>$request->input('CellPhone'),
-                    // 'HomePhone'=>$request->input('HomePhone'),
-                    // 'IdCity'=>$request->input('IdCity'),
-                    // 'Address'=>$request->input('Address'),
-                    // 'Bio'=>$request->input('Bio')
+                    'Email'=>$request->input('Email'),
+                    'isApproved' => $request->input('Approval'),
+                    'Actived' => $request->input('Actived'),
                 ]);
 
             if($request->input('Password')){
@@ -397,15 +396,17 @@ class UsersEmployeeControll extends Controller
         try{
             DB::table('employee')
                 ->where('Id', $request->input('Id'))
-                ->update([
-                    'Actived'=>0
-                ]);
+                ->delete();
+                // ->update([
+                //     'Actived'=>0
+                // ]);
 
             DB::table('users')
                 ->where('IdEmployee', $request->input('Id'))
-                ->update([
-                    'Actived'=>0
-                ]);
+                ->delete();
+                // ->update([
+                //     'Actived'=>0
+                // ]);
 
             $this->History->store(12,3,json_encode($item));
             DB::commit();

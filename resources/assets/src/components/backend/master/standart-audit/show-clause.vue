@@ -20,7 +20,7 @@
 	      </div>
 		  <div class="col-md-4 mb-3">
 	        <div class="font-weight-semibold">Detail Persyaratan</div>
-	        {{field.RequirementsDetail}}
+			<quill-editor v-model="field.RequirementsDetail" :options="editorOptions" :disabled="true"/>
 	      </div>
 		  <div class="col-md-4 mb-3">
 	        <div class="font-weight-semibold">CreateAt</div>
@@ -45,6 +45,8 @@
 </div>
 </template>
 
+<style src="@/vendor/libs/vue-quill-editor/typography.scss" lang="scss"></style>
+<style src="@/vendor/libs/vue-quill-editor/editor.scss" lang="scss"></style>
 <style src="@/vendor/styles/pages/users.scss" lang="scss"></style>
 <style type="text/css">
 	.td-first-child{
@@ -61,12 +63,22 @@ export default {
 	},
 
 	components: {
-
+		quillEditor: () => import('vue-quill-editor/dist/vue-quill-editor').then(m => m.quillEditor).catch(() => {})
 	},
 
 	data () {
 		return {
 	    field: {},
+		editorOptions: {
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, 3, 4, 5, 6, false] }, { font: [] }, { size: [] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ align: [] }],
+            ['link', 'video']
+          ]
+        }
+      }
 		};
 	},
 

@@ -70,20 +70,44 @@ class AuditPlantControll extends Controller
                 END'
             ))
             ->groupby('adp.Id');
-
+        
         if ($searchValue) {
             $query->where(function($query) use ($searchValue) {
                 foreach ($searchValue as $key=>$val) {
                     $key = str_replace('__', '.', $key);
-                    $query->where($key, 'like', '%'.$val.'%');
+                   
+                    if($key == 'adp.AuditPeriode' || $key == 'adp.OpeningMeeting') {
+                        if ($val != '' && !empty($val)) {     
+                            
+                            if($key === 'adp.AuditPeriode') {
+                                $ConvertDigitsPeriode = Carbon::createFromFormat('m-Y', $val);
+                                $searchDataPeriode = $ConvertDigitsPeriode->format('Y-m');
+    
+                                $query->where($key, 'like', '%'.$searchDataPeriode.'%');
+
+                            } else if($key === 'adp.OpeningMeeting') {
+                                $ConvertDigitsMeeting = Carbon::createFromFormat('Y-m-d', $val);
+                                $searchDataMeeting = $ConvertDigitsMeeting->format('Y-m-d');
+    
+                                $query->where($key, 'like', '%'.$searchDataMeeting.'%');
+                            }
+                        } else {
+                            $query->where($key, 'like', '%'.$val.'%');
+                        }
+                    } else {
+                        if($key !== 'sdt.Standart') {
+                            $query->where($key, 'like', '%'.$val.'%');
+                        }
+                    }
+                    
                 }
             });
         }
-
+        
         $data = $query->paginate($limit);
 
         foreach($data as $key=>$val){
-            $val->AuditCriteria = $this->getAuditCriteriaPlan($val->id);
+            $val->AuditCriteria = $this->getAuditCriteriaPlan($val->id, $searchValue);
         }
 
         session()->put('AuditPlan',$data);
@@ -91,15 +115,25 @@ class AuditPlantControll extends Controller
         return $data;
     }
 
-    public function getAuditCriteriaPlan($id){
+    public function getAuditCriteriaPlan($id, $searchValue){
         $criteria = DB::table('audit_plane_criteria as apc')
-            ->select('apc.Id','sdt.Standart')
-            ->join('standart_audit as sdt','sdt.Id','=','apc.IdStandartAudit')
-            ->where('apc.Actived','>',0)
-            ->where('apc.IdAuditPlane',$id)
-            ->get();
+        ->select('apc.Id', 'sdt.Standart')
+        ->join('standart_audit as sdt', 'sdt.Id', '=', 'apc.IdStandartAudit')
+        ->join('audit_plane as ap', 'ap.Id', '=', 'apc.IdAuditPlane') 
+        ->where('apc.Actived', '>', 0)
+        ->where('apc.IdAuditPlane', $id)
+        ->where(function ($query) use ($searchValue) {
+            foreach ($searchValue as $key => $searchVal) {
+                $key = str_replace('__', '.', $key);
+                
+                if ($key === 'sdt.Standart' && !empty($searchVal)) {
+                    $query->orWhere($key, 'like', '%' . $searchVal . '%');
+                }
+            }
+        })
+        ->get();
 
-        return $criteria;
+    return $criteria;
     }
 
     public function getSelect(Request $request){
@@ -124,6 +158,7 @@ class AuditPlantControll extends Controller
 
         $employee = DB::table('employee')
             ->select('Id','Name','NIP')
+            ->where('isApproved',1)
             ->where('Actived','>',0)
             ->get();
 
@@ -723,7 +758,7 @@ class AuditPlantControll extends Controller
 
         if(!empty($item)){
             $item->KriteriaAudit = '';
-            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('F-Y');
+            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('m.y');
             $AuditSelection = DB::table('audit_selection as ads')
                 ->select('ads.Id','dpt.Department','ads.AuditDate','ads.HourStart','ads.HourDone')
                 ->join('department as dpt','dpt.Id','=','ads.IdDepartmentAuditee')
@@ -768,7 +803,7 @@ class AuditPlantControll extends Controller
                     $val->DetailAudit = $DetailAuditSelection;
                     $val->DetailAuditClause = $DetailAuditClause;
                     $val->LeadAuditor = $DetailAuditSelection->LeadAuditor;
-                    $val->AuditDateHari = Carbon::parse($val->AuditDate)->format('l, d F Y');
+                    $val->AuditDateHari = Carbon::parse($val->AuditDate)->format('l, d.m.y'); // d F Y (format before changes)
                     $val->HourStart = Carbon::parse($val->HourStart)->format('H.II');
                     $val->HourDone = Carbon::parse($val->HourDone)->format('H.II');
                 }
@@ -937,7 +972,7 @@ class AuditPlantControll extends Controller
         if(!empty($item)){
             $item->KriteriaAudit = '';
             $item->PeriodeYear = Carbon::parse($item->AuditPeriode)->format('Y');
-            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('F-Y');
+            $item->AuditPeriode = Carbon::parse($item->AuditPeriode)->format('m.y');
             $item->MonthExcecution = Carbon::parse($item->AuditExecutionStart)->format('m');
             $item->MonthExcecutionDone = Carbon::parse($item->AuditExecutionDone)->format('m');
             $AuditSelection = DB::table('audit_selection as ads')

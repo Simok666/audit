@@ -103,6 +103,12 @@
     "value":"/RoleAdmin/master/data-glossary-of-terms",
     "icon":"ion ion-md-bookmark",
     "children":[]
+  },{
+    "id":38,
+    "text":"Audit Template Email",
+    "value":"/RoleAdmin/master/data-audit-email-template",
+    "icon":"ion ion-md-bookmark",
+    "children":[]
   }]
 
 },{
