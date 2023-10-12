@@ -63,8 +63,10 @@ __webpack_require__.r(__webpack_exports__);
       opsEmployee: [],
       isNotif: false,
       isFormEdit: false,
+      isFormShow: false,
       alertNotif: '',
-      alertVariant: 'alert-dark-danger'
+      alertVariant: 'alert-dark-danger',
+      User: JSON.parse(window.localStorage.getItem('user'))
     };
   },
   methods: {
@@ -150,8 +152,17 @@ __webpack_require__.r(__webpack_exports__);
         this.alertVariant = 'alert-dark-danger';
       }.bind(this));
     },
+    onAction: function onAction(action) {
+      if (action == 'approve-item') {
+        this.appData('/AdminVue/approval-audit-plan-approveData', this.$route.params.id, null, 1, this.$route.params.id);
+      }
+    },
     backIndex: function backIndex() {
-      this.$router.push('/RoleAdmin/audit/data-audit-plan');
+      if (this.isFormShow) {
+        this.$router.push('/RoleAdmin/approval/data-approval-audit-plan');
+      } else {
+        this.$router.push('/RoleAdmin/audit/data-audit-plan');
+      }
     },
     handleFile: function handleFile(files) {
       // console.log('FilePond Updated')
@@ -313,6 +324,13 @@ __webpack_require__.r(__webpack_exports__);
         this.headerCard = 'Form / Edit Data Audit Plan';
         this.textBtnSubmit = 'Update';
       }
+    } else if (this.$route.params.isFormShow) {
+      var Id = this.$route.params.id;
+      if (Id) {
+        this.getData(Id);
+        this.field.Id = Id;
+        this.isFormShow = true;
+      }
     }
     this.getSelect();
   }
@@ -378,7 +396,8 @@ var render = function render() {
       "show-labels": false,
       placeholder: "Pilih Organizer",
       label: "Name",
-      "track-by": "Name"
+      "track-by": "Name",
+      disabled: _vm.isFormShow
     },
     on: {
       select: _vm.getIdAudit
@@ -406,6 +425,7 @@ var render = function render() {
       bootstrapStyling: true,
       typeable: true,
       "minimum-view": "month",
+      disabled: _vm.isFormShow,
       required: ""
     },
     on: {
@@ -456,6 +476,7 @@ var render = function render() {
       state: _vm.allErrors.OpeningMeeting ? false : null,
       bootstrapStyling: true,
       typeable: true,
+      disabled: _vm.isFormShow,
       required: ""
     },
     model: {
@@ -475,6 +496,7 @@ var render = function render() {
       type: "text",
       placeholder: "00:00",
       state: _vm.allErrors.OpeningMeetingTime ? false : null,
+      disabled: _vm.isFormShow,
       mask: _vm.timeMask
     },
     model: {
@@ -497,6 +519,7 @@ var render = function render() {
     attrs: {
       format: _vm.formatDatedmy,
       state: _vm.allErrors.AuditExecutionStart ? false : null,
+      disabled: _vm.isFormShow,
       bootstrapStyling: true,
       typeable: true,
       required: ""
@@ -523,6 +546,7 @@ var render = function render() {
       state: _vm.allErrors.AuditExecutionDone ? false : null,
       bootstrapStyling: true,
       typeable: true,
+      disabled: _vm.isFormShow,
       required: ""
     },
     model: {
@@ -547,6 +571,7 @@ var render = function render() {
       state: _vm.allErrors.ClosingMeeting ? false : null,
       bootstrapStyling: true,
       typeable: true,
+      disabled: _vm.isFormShow,
       required: ""
     },
     model: {
@@ -566,6 +591,7 @@ var render = function render() {
       type: "text",
       placeholder: "00:00",
       state: _vm.allErrors.CloseMeetingTime ? false : null,
+      disabled: _vm.isFormShow,
       mask: _vm.timeMask
     },
     model: {
@@ -591,6 +617,7 @@ var render = function render() {
       multiple: true,
       placeholder: "Pilih Approval Employee",
       label: "Name",
+      disabled: _vm.isFormShow,
       "track-by": "Name"
     },
     model: {
@@ -616,6 +643,7 @@ var render = function render() {
       "show-labels": false,
       placeholder: "Pilih Standart Audit",
       label: "Standart",
+      disabled: _vm.isFormShow,
       "track-by": "Standart"
     },
     model: {
@@ -637,6 +665,7 @@ var render = function render() {
     attrs: {
       name: "AuditScope",
       rows: "3",
+      disabled: _vm.isFormShow,
       "no-resize": ""
     },
     model: {
@@ -656,6 +685,7 @@ var render = function render() {
     attrs: {
       name: "Purpose",
       rows: "3",
+      disabled: _vm.isFormShow,
       "no-resize": ""
     },
     model: {
@@ -675,6 +705,7 @@ var render = function render() {
     attrs: {
       name: "Objective",
       rows: "3",
+      disabled: _vm.isFormShow,
       "no-resize": ""
     },
     model: {
@@ -703,6 +734,7 @@ var render = function render() {
         options: _vm.opsDepartment,
         "allow-empty": false,
         "show-labels": false,
+        disabled: _vm.isFormShow,
         placeholder: "Pilih Department Auditee",
         label: "Department",
         "track-by": "Department"
@@ -727,6 +759,7 @@ var render = function render() {
         "allow-empty": false,
         "show-labels": false,
         multiple: true,
+        disabled: _vm.isFormShow,
         placeholder: "Pilih Position Auditee",
         label: "Name",
         "track-by": "Name"
@@ -753,7 +786,8 @@ var render = function render() {
         name: "Email",
         rows: "3",
         "background-color": "btn-danger",
-        "no-resize": ""
+        "no-resize": "",
+        disabled: _vm.isFormShow
       },
       model: {
         value: item.Email,
@@ -767,6 +801,7 @@ var render = function render() {
     }, [index == 0 ? _c("label", [_vm._v("Action")]) : _vm._e(), _vm._v(" "), index > 0 ? _c("b-button", {
       staticClass: "btn btn-sm btn-icon btn-danger text-white",
       attrs: {
+        disabled: _vm.isFormShow,
         pill: true
       },
       on: {
@@ -780,7 +815,8 @@ var render = function render() {
   }), _vm._v(" "), _c("b-btn", {
     staticClass: "float-left btn-info",
     attrs: {
-      type: "button"
+      type: "button",
+      disabled: _vm.isFormShow
     },
     on: {
       click: function click($event) {
@@ -798,6 +834,7 @@ var render = function render() {
       "label-idle": "Klik Untuk Menambahkan Attachment",
       "allow-multiple": true,
       files: _vm.field.File,
+      disabled: _vm.isFormShow,
       required: ""
     },
     on: {
@@ -822,13 +859,22 @@ var render = function render() {
     attrs: {
       label: ""
     }
-  }, [_c("b-btn", {
+  }, [_vm.isFormShow === false ? _c("b-btn", {
     staticClass: "float-right ml-2",
     attrs: {
       type: "submit",
       variant: "primary"
     }
-  }, [_vm._v(_vm._s(_vm.textBtnSubmit))]), _vm._v(" "), _c("b-btn", {
+  }, [_vm._v(_vm._s(_vm.textBtnSubmit))]) : _vm._e(), _vm._v(" "), _vm.User.accessMenuDB[2].children[0].children[4].selected === true && _vm.isFormShow === true ? _c("b-btn", {
+    staticClass: "btn btn-outline-success btn-sm mr-1 mt-1 float-right ml-2",
+    on: {
+      click: function click($event) {
+        return _vm.onAction("approve-item");
+      }
+    }
+  }, [_c("i", {
+    staticClass: "ion ion-ios-create"
+  }), _vm._v(" Approve\n          ")]) : _vm._e(), _vm._v(" "), _c("b-btn", {
     staticClass: "float-right",
     attrs: {
       type: "button",

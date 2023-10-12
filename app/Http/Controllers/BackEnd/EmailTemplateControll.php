@@ -87,10 +87,18 @@ class EmailTemplateControll extends Controller
             ->select('Id','Name')
             ->where('Actived','>',0)
             ->get();
-
+        
+        $getAuditPlan = DB::table('audit_plane')
+            ->select('Id','NoTrans','OrganizerAudit','AuditPeriode','Status','StatusApproved')
+            ->where('Status',2)
+            ->where('StatusApproved',2)
+            ->where('Actived','>',0)
+            ->get();    
+        // dd(session('adminvue'));
         return json_encode(array(
             'status'=>true,
-            'organizer'=>$organizer
+            'organizer'=>$organizer,
+            'auditplan'=>$getAuditPlan
         ));
     }
 
