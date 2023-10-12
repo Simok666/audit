@@ -437,7 +437,11 @@ export default function () {
                   this.showNotifCustom('notifications-danger','Error Message',resp.message)
                 }
 
-                elmTable.refresh()
+                if(elmTable == null) {
+                  this.$router.push('/RoleAdmin/approval/data-approval-audit-plan')
+                } else {
+                  elmTable.refresh()
+                }
 
               }.bind(this))
               .catch( function (e) {

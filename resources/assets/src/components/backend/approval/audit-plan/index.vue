@@ -457,7 +457,14 @@ export default {
       }
 
       if(action == 'approve-item'){
-        this.appData('/AdminVue/approval-audit-plan-approveData', data.id, this.$refs.vuetable,1,data.id)
+        this.$router.push({
+          name: 'audit/form-audit-plan',
+          params: {
+            id: data.id,
+            isFormShow: true
+          }
+        })
+        // this.appData('/AdminVue/approval-audit-plan-approveData', data.id, this.$refs.vuetable,1,data.id)
       }
 
       if(action == 'reject-item'){

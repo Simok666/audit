@@ -29,7 +29,8 @@
                 :show-labels="false"
                 placeholder="Pilih Organizer"
                 label="Name"
-                track-by="Name" />
+                track-by="Name" 
+                :disabled="isFormShow"/>
               <span class="text-danger" v-if="allErrors.Organizer">{{ allErrors.Organizer[0] }}</span>
             </b-form-group>
 
@@ -44,6 +45,7 @@
                 :typeable="true"
                 minimum-view="month"
                 @selected="dateSelected()"
+                :disabled="isFormShow"
                 class="mb-1" required/>
             </b-form-group>
 
@@ -66,6 +68,7 @@
                         :bootstrapStyling="true"
                         :typeable="true"
                         class="mb-1" 
+                        :disabled="isFormShow"
                         style="background: #fff !important;"
                         required/>
                         <span class="text-danger" v-if="allErrors.DateOpen">{{ allErrors.DateOpen[0] }}</span>
@@ -75,6 +78,7 @@
                             v-model="field.OpeningMeetingTime"
                             :placeholder="'00:00'"
                             :state="allErrors.OpeningMeetingTime?false:null"
+                            :disabled="isFormShow"
                             :mask="timeMask"/>
                         <span class="text-danger" v-if="allErrors.OpeningMeetingTime">{{ allErrors.OpeningMeetingTime[0] }}</span>
                     </b-form-group>
@@ -88,6 +92,7 @@
                     v-model="field.AuditExecutionStart"
                     :format="formatDatedmy"
                     :state="allErrors.AuditExecutionStart?false:null"
+                    :disabled="isFormShow"
                     :bootstrapStyling="true"
                     :typeable="true"
                     class="mb-1" required/>
@@ -103,6 +108,7 @@
                     :state="allErrors.AuditExecutionDone?false:null"
                     :bootstrapStyling="true"
                     :typeable="true"
+                    :disabled="isFormShow"
                     class="mb-1" required/>
                     <span class="text-danger" v-if="allErrors.AuditExecutionDone">{{ allErrors.AuditExecutionDone[0] }}</span>
             </b-form-group>
@@ -117,6 +123,7 @@
                         :state="allErrors.ClosingMeeting?false:null"
                         :bootstrapStyling="true"
                         :typeable="true"
+                        :disabled="isFormShow"
                         class="mb-1" required/>
                         <span class="text-danger" v-if="allErrors.DateClose">{{ allErrors.DateClose[0] }}</span>
                     </b-form-group>
@@ -125,6 +132,7 @@
                             v-model="field.CloseMeetingTime"
                             :placeholder="'00:00'"
                             :state="allErrors.CloseMeetingTime?false:null"
+                            :disabled="isFormShow"
                             :mask="timeMask"/>
                         <span class="text-danger" v-if="allErrors.CloseMeetingTime">{{ allErrors.CloseMeetingTime[0] }}</span>
                     </b-form-group>
@@ -145,6 +153,7 @@
                 :multiple="true"
                 placeholder="Pilih Approval Employee"
                 label="Name"
+                :disabled="isFormShow"
                 track-by="Name" />
               <span class="text-danger" v-if="allErrors.Approved">{{ allErrors.Approved[0] }}</span>
             </b-form-group>
@@ -160,6 +169,7 @@
                 :show-labels="false"
                 placeholder="Pilih Standart Audit"
                 label="Standart"
+                :disabled="isFormShow"
                 track-by="Standart" />
               <span class="text-danger" v-if="allErrors.AuditCriteria">{{ allErrors.AuditCriteria[0] }}</span>
             </b-form-group>
@@ -171,6 +181,7 @@
                 name="AuditScope"
                 v-model="field.AuditScope"
                 rows="3"
+                :disabled="isFormShow"
                 no-resize>
                 </b-form-textarea>
             </b-form-group>
@@ -185,6 +196,7 @@
                 name="Purpose"
                 v-model="field.Purpose"
                 rows="3"
+                :disabled="isFormShow"
                 no-resize>
                 </b-form-textarea>
             </b-form-group>
@@ -195,6 +207,7 @@
                 name="Objective"
                 v-model="field.Objective"
                 rows="3"
+                :disabled="isFormShow"
                 no-resize>
                 </b-form-textarea>
             </b-form-group>
@@ -212,6 +225,7 @@
                 :options="opsDepartment"
                 :allow-empty="false"
                 :show-labels="false"
+                :disabled="isFormShow"
                 @select="getPositionSelect($event,index)"
                 placeholder="Pilih Department Auditee"
                 label="Department"
@@ -225,6 +239,7 @@
                 :allow-empty="false"
                 :show-labels="false"
                 :multiple="true"
+                :disabled="isFormShow"
                 @select="getEmailEvent($event,index)"
                 @remove="removeEmailEvent($event,index)"
                 placeholder="Pilih Position Auditee"
@@ -239,17 +254,18 @@
                   rows="3"
                   background-color="btn-danger"
                   no-resize
+                  :disabled="isFormShow"
                 >
                 </b-form-textarea>
             </b-form-group>
             <b-form-group class="col-md-1 col-2 text-center">
               <label v-if="index == 0">Action</label>
-              <b-button class="btn btn-sm btn-icon btn-danger text-white" :pill="true" @click="removeDepartmentAuditee(index)" v-if="index > 0">
+              <b-button class="btn btn-sm btn-icon btn-danger text-white" :disabled="isFormShow" :pill="true" @click="removeDepartmentAuditee(index)" v-if="index > 0">
                   <i class="ion ion-md-trash"></i>
               </b-button>
             </b-form-group>
           </b-form-row>
-          <b-btn type="button" @click="addDepartmentAuditee()" class="float-left btn-info"><i class="fas fa-plus"></i> Tambah</b-btn>
+          <b-btn type="button" @click="addDepartmentAuditee()" :disabled="isFormShow" class="float-left btn-info"><i class="fas fa-plus"></i> Tambah</b-btn>
         </b-card>
 
 
@@ -264,6 +280,7 @@
                 @updatefiles="handleFile"
                 @removefile="handleRemove"
                 :files="field.File"
+                :disabled="isFormShow"
                 required/>
                 <b-btn type="button" variant="secondary" @click="priviewFile()" class="float-right" v-if="textBtnSubmit == 'Update'">Preview File</b-btn>
             </b-form-group>
@@ -272,7 +289,11 @@
         <b-form-row>
           <b-form-group class="col-md-6"></b-form-group>
           <b-form-group label="" class="col-md-6">
-            <b-btn type="submit" variant="primary" class="float-right ml-2">{{textBtnSubmit}}</b-btn>
+            <b-btn type="submit" v-if="isFormShow === false" variant="primary" class="float-right ml-2">{{textBtnSubmit}}</b-btn>
+            <b-btn class="btn btn-outline-success btn-sm mr-1 mt-1 float-right ml-2"
+              @click="onAction('approve-item')" v-if="User.accessMenuDB[2].children[0].children[4].selected === true && isFormShow === true">
+              <i class="ion ion-ios-create"></i> Approve
+            </b-btn>
             <b-btn type="button" variant="secondary" @click="backIndex()" class="float-right">Back</b-btn>
           </b-form-group>
         </b-form-row>
@@ -336,8 +357,11 @@ export default {
       opsEmployee:[],
       isNotif: false,
       isFormEdit: false,
+      isFormShow: false,
       alertNotif: '',
-      alertVariant: 'alert-dark-danger'
+      alertVariant: 'alert-dark-danger',
+
+      User : JSON.parse(window.localStorage.getItem('user'))
     }
 
   },
@@ -432,9 +456,19 @@ export default {
         this.alertVariant = 'alert-dark-danger'
       }.bind(this))
     },
+    
+    onAction(action) {
+      if(action == 'approve-item') {
+        this.appData('/AdminVue/approval-audit-plan-approveData', this.$route.params.id, null,1,this.$route.params.id)
+      }
+    },
 
     backIndex() {
-      this.$router.push('/RoleAdmin/audit/data-audit-plan')
+      if(this.isFormShow) {
+        this.$router.push('/RoleAdmin/approval/data-approval-audit-plan')
+      } else {
+        this.$router.push('/RoleAdmin/audit/data-audit-plan')
+      }
     },
 
     handleFile: function(files) {
@@ -602,7 +636,14 @@ export default {
         this.headerCard = 'Form / Edit Data Audit Plan'
         this.textBtnSubmit = 'Update'
       }
-
+    } else if (this.$route.params.isFormShow) {
+      
+      var Id = this.$route.params.id
+      if (Id) {
+        this.getData(Id)
+        this.field.Id = Id
+        this.isFormShow = true
+      }
     }
     this.getSelect()
   },
